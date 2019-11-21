@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="static/jss/input-page.js"></script>
+</head>
+<body>
+
+<style>
+
+#submit{
+    width: 435px;
+    position: relative;
+    top:-25px;
+    left: -50px;
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-weight: 600 (semibold);
+    line-height: 18px;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: black;
+    padding: 11px 35px;
+    background-color: #A2D9E7;
+    border-radius: 25px;
+}
+    .infoForm{
+        background: url('static/blurred6.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .header{
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        color:#143055;
+        position:relative;
+        top:-50;
+        left:300;
+        font-size: 30px;
+    }
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #143055 !important;
+        background-color: white !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+    table, th, td {
+        border: 1px solid black;
+        font-family: 'Times New Roman';
+        font-size: 40px;
+        width: 60px;
+        color: white;
+        background-color: white;
+        align: center;
+        position: relative;
+        top: 0px;
+    }
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
+    .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+    }
+    .mb-auto, .my-auto {
+        margin-bottom: auto!important;
+        margin-top: auto!important
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    
+    footer.footer {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .bg-dark {
+        background-color: #143055!important;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .text-muted {
+        color: lightblue!important;
+    }
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    .card-deck {
+        display: flex;
+        min-width: 220px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .card {
+        border-radius: 10px;
+    }
+    .card-header {
+        padding: 1.25rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.3s;
+        margin: 30px;
+        background-color: white;
+        border-radius: 10px
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    }
+
+    h1 {
+        color: #143055;
+        text-align: center;
+        font-size: 20px;
+        /* font-weight: bold; */
+        /* text-shadow: 2px 2px 3px gray; */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    em {
+        color: red
+    }
+    input, select {
+        font-family: "HelveticaNeue-Light";
+        font-size: 13px;
+        margin: -2px;
+    }
+    input, select {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    input:focus {
+        border: 1px solid #555;
+    }
+    
+    .featureCol {
+        -webkit-column-count: 2;
+        column-count: 2;
+        /* margin: -20px;
+        margin-left: -50px;
+        margin-right: -50px; */
+    }
+    .button2 {
+        background-color: white; 
+        color: #143055; 
+        border: 2px solid #143055;
+        padding: 6px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    label, p {
+        color: #143055
+    }
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px
+    }
+
+    
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+
+}
+/* Popup box END */
+
+
+
+    /*Contact Dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:50px;
+  right:110px;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: HelveticaNeue-Light;
+  color: #143055;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+
+<script type="text/javascript">
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+} 
+</script>
+</head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li class="active"><a style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/search-page"><i class="fa fa-fw fa-search"></i> Search Events</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                <li><a href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+
+                <li><a style="color: white" class="trigger_popup_fricc"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<body>
+<div class="infoForm">
+    <div class="container">
+        <!-- <img src="static/GWCC_Aerial_View.png"> -->
+        <div class="formInput">
+        <div class="row">
+            <div class="col-lg-12" style="margin-left: 0px; margin-right:50px;">
+            <form action="{{url_for('optmodel')}}" method="post" class="form-horizontal" id="form" role="form-group">
+                <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1><i class="fa fa-tasks"></i>  Request For Proposal</h1>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Event Name<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="EventName" id="EventName" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Event Type<em>*</em></label>
+                            <div class="col-lg-8">
+                                <select class="form-control" name="eventType" id="eventType">
+                                    <option value = "Affiliate/Exhibitor (AFX)">Affiliate/Exhibitor (AFX)</option>
+                                    <option value = "Affiliate/Parking (AFP)">Affiliate/Parking (AFP)</option>
+                                    <option value = "Amusement Park (AMUP)">Amusement Park (AMUP)</option>
+                                    <option value = "Awards Ceremony (AWC)">Awards Ceremony (AWC)</option>
+                                    <option value = "Band Competition (BCOMP)">Band Competition (BCOMP)</option>
+                                    <option value = "Band Practice (BPR)">Band Practice (BPR)</option>
+                                    <option value = "Banquet/Reception (BANQ)">Banquet/Reception (BANQ)</option>
+                                    <option value = "Breakfast (BRE)">Breakfast (BRE)</option>
+                                    <option value = "Broadcasting (BRO)">Broadcasting (BRO)</option>
+                                    <option value = "Brunch (BRU)">Brunch (BRU)</option>
+                                    <option value = "Charitable Run/Walk (CRW)">Charitable Run/Walk (CRW)</option>
+                                    <option value = "Charity Event (CHRTY)">Charity Event (CHRTY)</option>
+                                    <option value = "Cheerleaders Practice (CP)">Cheerleaders Practice (CP)</option>
+                                    <option value = "Co-Produced Event (COPR)">Co-Produced Event (COPR)</option>
+                                    <option value = "Competition (COMP)">Competition (COMP)</option>
+                                    <option value = "Concert (CON)">Concert (CON)</option>
+                                    <option value = "Conference (CONF)">Conference (CONF)</option>
+                                    <option value = "Conference (No Expo)(Assoc)(CWOA)">Conference (No Expo)(Assoc)(CWOA)</option>
+                                    <option value = "Conference (No Expo)(Corp)(CWOC)">Conference (No Expo)(Corp)(CWOC)</option>
+                                    <option value = "Conference & Expo (Assoc)(CEA)">Conference and Expo (Assoc)(CEA)</option>
+                                    <option value = "Conference & Expo (Corp)(CEC)">Conference and Expo (Corp)(CEC)</option>
+                                    <option value = "Contractor Move-In/Move-Out (INTC)">Contractor Move-In/Move-Out (INTC)</option>
+                                    <option value = "Convention (No Exhibits)(CONV)">Convention (No Exhibits)(CONV)</option>
+                                    <option value = "Convention/Tradeshow - Assoc. (CONVA)">Convention/Tradeshow - Assoc. (CONVA)</option>
+                                    <option value = "Convention/Tradeshow - Corp. (CONVC)">Convention/Tradeshow - Corp. (CONVC)</option>
+                                    <option value = "Dinner (DIN)">Dinner (DIN)</option>
+                                    <option value = "Entertainment/Concert (ENT)">Entertainment/Concert (ENT)</option>
+                                    <option value = "Exhibition (EXH)">Exhibition (EXH)</option>
+                                    <option value = "Family Reunion (FAM)">Family Reunion (FAM)</option>
+                                    <option value = "Fan-Fest/Tailgate Party (FFTP)">Fan-Fest/Tailgate Party (FFTP)</option>
+                                    <option value = "Fashion Show (FSH)">Fashion Show (FSH)</option>
+                                    <option value = "Festival (FEST)">Festival (FEST)</option>
+                                    <option value = "Film Shoot (FILM)">Film Shoot (FILM)</option>
+                                    <option value = "Fitness Event (FIT)">Fitness Event (FIT)</option>
+                                    <option value = "Gala Dinner (GD)">Gala Dinner (GD)</option>
+                                    <option value = "Game (GAM)">Game (GAM)</option>
+                                    <option value = "Graduation (GRAD)">Graduation (GRAD)</option>
+                                    <option value = "Holiday Party (HOP)">Holiday Party (HOP)</option>
+                                    <option value = "Internal (INT)">Internal (INT)</option>
+                                    <option value = "Interviews (ITVW)">Interviews (ITVW)</option>
+                                    <option value = "Job Fair/Career Expo (JFCE)">Job Fair/Career Expo (JFCE)</option>
+                                    <option value = "Luncheon (LUN)">Luncheon (LUN)</option>
+                                    <option value = "Market Place (MPL)">Market Place (MPL)</option>
+                                    <option value = "Meeting (Assoc)(MA)">Meeting (Assoc)(MA)</option>
+                                    <option value = "Meeting (Corp)(MC)">Meeting (Corp)(MC)</option>
+                                    <option value = "Meeting (MEET)">Meeting (MEET)</option>
+                                    <option value = "Monthly Billables (MB)">Monthly Billables (MB)</option>
+                                    <option value = "Orientation (ORI)">Orientation (ORI)</option>
+                                    <option value = "Other (OTH)">Other (OTH)</option>
+                                    <option value = "Parade (PAR)">Parade (PAR)</option>
+                                    <option value = "Parking at MY (PMY)">Parking at MY (PMY)</option>
+                                    <option value = "Party (PRTY)">Party (PRTY)</option>
+                                    <option value = "Picnic (PIC)">Picnic (PIC)</option>
+                                    <option value = "Planning Meeting (PM)">Planning Meeting (PM)</option>
+                                    <option value = "Promotional Event (PROMO)">Promotional Event (PROMO)</option>
+                                    <option value = "Public/Consumer Event (PUB)">Public/Consumer Event (PUB)</option>
+                                    <option value = "Punt, Pass & Kick (PPK)">Punt, Pass & Kick (PPK)</option>
+                                    <option value = "Race (RCE)">Race (RCE)</option>
+                                    <option value = "Reception (REC)">Reception (REC)</option>
+                                    <option value = "Rehearsal (RHR)">Rehearsal (RHR)</option>
+                                    <option value = "Sporting Event w/ Exhibits (SPORT)">Sporting Event w/ Exhibits (SPORT)</option>
+                                    <option value = "Team Building (TB)">Team Building (TB)</option>
+                                    <option value = "Team Practice (TP)">Team Practice (TP)</option>
+                                    <option value = "Trade Show (TS)">Trade Show (TS)</option>
+                                    <option value = "Training Session (TRAI)">Training Session (TRAI)</option>
+                                    <option value = "Video/Photo Shoot (VPS)">Video/Photo Shoot (VPS)</option>
+                                    <option value = "Wedding (WED)">Wedding (WED)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Event Start Date<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control w3-input" name="startDate" id="startDate" type="date" value="2020-11-20" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Event End Date<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control w3-input" name="endDate" id="endDate" type="date" value="2020-11-21" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Attendance<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="attendance" id="attendance" type="number" min=0 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">SQFT Needed<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="sqft" id="sqft" type="number" min=0 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Total Room Nights<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="RoomNights" id="RoomNights" type="number" min=0 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">RFP Enter Date<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control w3-input" name="RFPSubmission" id="RFPSubmission" type="Date" value="2018-11-20" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-lg-2 col-form-label form-control-label"></label>
+                            <div class="col-lg-6 text-center" style="margin-left:40px">
+                                <input type="reset" class="btn btn-primary" value="Cancel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="card">
+                <div class="col-lg-6">
+                    <div class="card-body">
+                        <h1><i class="fa fa-puzzle-piece"></i>   Supplementary Information</h1>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Ordered Rent Total<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="RentTotal" id="RentTotal" type="number" min=0 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Min F&B Revenue<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="FB" id="FB" type="number" min=0 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Exhibit Halls<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="ExhibitHalls" id="ExhibitHalls" type="number" min=0 max=16 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Meeting Rooms<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="MeetingRooms" id="MeetingRooms" type="number" min=0 max=118 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Auditoriums<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Auditorium" id="Auditorium" type="number" min=0 max=3 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Ballrooms<em>*</em></label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Ballrooms" id="Ballrooms" type="number" min=0 max=7 required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label form-control-label">Min SQFT</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Minsqft" id="Minsqft" type="number" min=0 value=1800>
+                            </div>
+                            <div class="col-lg-12"><br>
+                                <p style="margin-top: -5px;"><em style="color:#143055">Note:</em> "Min SQFT": The min area one event can tolerate for a room</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group row">
+                                <label class="col-lg-2 col-form-label form-control-label"></label>
+                                <div class="col-lg-6 text-center" style="margin-left: 40px">
+                                    <input type="reset" class="btn btn-primary" value="Cancel">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="form-group row text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button class="button button2 text-center" style="margin-left: 0px" type="submit"> Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <button type="submit" class="btn btn-primary"> Submit</button> -->
+            </form>
+            </div>
+        </div>
+        <p id="confirm"></p>
+        </div>
+    </div>
+</div>
+</body>
+
+<footer class="footer bg-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 h-100 text-center my-auto">
+                <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Terms of Use</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Privacy Policy</a>
+                </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                    <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                    <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href=https://www.instagram.com/centennial_park/?hl=en" style="color: white">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+</footer>
+<style>
+        body {
+            font-family: "HelveticaNeue-Light";
+            background-color: white;
+        }
+</html>

@@ -1,0 +1,411 @@
+,Event ID,Description,Cluster,Demand,PM
+0,12598,Family Feud,FILM_AWC,1,0.199795289
+1,5852,Future Business Leaders of America Phi Beta Lamda,CONV,1,0.189223649
+2,6587,2016 Peachtree Health and Fitness Expo,PUB,2,0.198307804
+3,9525,2016 NPC Georgia Bodybuilding and Figure Championships,COMP,1,0.18704094
+4,5026,Alpha Kappa Alpha Sorority Inc.,CONV,1,0.10230114
+5,12376,1st Annual Miss Teen Dream USA National Pageant 2016,COMP,1,0.025460768
+6,5875,V-103 Car and Bike Show,PUB,2,0.174154595
+7,11838,Solution Tree,MEET,1,0.110442754
+8,8972,Herbalife Extravaganza,CONV,1,0.17776256
+9,11732,Nike Tournament of Champions,COMP,1,0.188698221
+10,6064,KIPP School Summit,CONV,1,0.18643793
+11,12672,APS Back-to-School Bash,ME_OTH,0,0.111513282
+12,13468,Insight Global Reception,SMALL,1,0.19313829
+13,5912,Drum Corps International Band Competition,COMP,1,0.185371822
+14,12072,2016 DoDIIS Worldwide,SMALL,1,0.170054835
+15,13980,Summer of George,FILM_AWC,1,0.195913523
+16,12589,The National Poetry Slam Finals,COMP,0,0.112211321
+17,8587,Kell Kickoff Classic,CONF_GAM,1,0.116140854
+18,11291,Bronner Bros. International Beauty Show,CONV,0,0.112328512
+19,14164,'Ki Banu Duniya Da': Gurdas Maan Live in Concert,CON_P,2,0.194639285
+20,6467,International Woodworking Fair 2016,CONV,0,0.168095539
+21,12794,Chick-fil-A Kickoff Game - Georgia vs. North Carolina,CONF_GAM,2,0.188802467
+22,5539,CFA Kickoff Game FanZone - Georgia vs. North Carolina,CONF_GAM,2,0.107173662
+23,14351,Logan Lucky,FILM_AWC,1,0.175602136
+24,11913,HR Star Conference,CONF_GAM,2,0.190047171
+25,14348,Hire Dynamics,ME_OTH,2,0.030455433
+26,11579,Electronic Dance Music Event,CON_P,2,0.150308816
+27,14355,It Works! Gear Store,MEET,2,0.19179309
+28,13309,It Works! U,SMALL,2,0.198528414
+29,8725,Teradata Partners Conference & Expo,CONV,0,0.187130998
+30,13462,Torch Relay for Children's Miracle Network - Atlanta Market,CHRTY_GRAD,2,0.188520656
+31,5309,American Society for Bone and Mineral Research,CONV,0,0.189744924
+32,11705,Walk to Defeat ALS,CHRTY_GRAD,2,0.194046702
+33,11499,Microsoft Ignite,CONV,0,0.192834037
+34,7359,North American Association of State and Provincial Lotteries,CONV,2,0.184389282
+35,12117,VMUG Regional User Group,MEET,1,0.197848568
+36,10717,2016 Susan G. Komen Atlanta 3 Day,CHRTY_GRAD,2,0.134612757
+37,11577,Star City Games,PUB,1,0.191127238
+38,11809,The Black Women's Expo,PUB,1,0.144144744
+39,14133,Big Data Bootcamp,MEET,1,0.172736465
+40,5716,Georgia State University vs. Texas State,CONF_GAM,2,0.162353793
+41,8877,4Life,CONV,2,0.181349931
+42,12328,Four Pillar Tribute,SMALL,2,0.192507944
+43,12968,Atlanta Maritime Association,ME_OTH,1,0.197148516
+44,11408,Women's Empowerment Motivational Speaking Seminar,MEET,1,0.197302151
+45,14030,Humana 5K,SMALL,2,0.164838108
+46,5354,National Association of Convenience Stores,CONV,2,0.187359282
+47,5717,Georgia State University vs. UT Martin,CONF_GAM,2,0.156777412
+48,11724,2016 Honda Dealer Meeting,MEET,1,0.188888502
+49,10063,Walker Stalker Con,PUB,1,0.1752505
+50,12474,State of the Region Breakfast,ME_OTH,1,0.175578374
+51,5991,Bands of America Regionals,COMP,1,0.132559645
+52,14004,Brightree,FILM_AWC,2,0.198897561
+53,5055,Medtrade Conference & Expo,CONV,1,0.175901031
+54,11401,Total Technology Summit,MEET,2,0.153275684
+55,12632,GSMA Mobility Live! - North America,MEET,2,0.193902727
+56,5327,Specialty Tools & Fasteners Distributors,CONV,1,0.186818206
+57,5489,Rockwell Automation Fair 2016,CONV,1,0.186713426
+58,12344,The Atlanta Women's Foundation,ME_OTH,2,0.199859609
+59,12477,American Functional Medicine Association Conference,MEET,2,0.106444669
+60,6410,Legacy of Excellence Awards,FILM_AWC,2,0.199245357
+61,12609,Academy of Educational Excellence Awards,FILM_AWC,2,0.189919838
+62,13425,Center for Black Women's Wellness Expo,PUB,2,0.176221306
+63,14731,Baby Driver,FILM_AWC,2,0.196851343
+64,13338,Battle of the Dancelines,COMP,0,0.14048871
+65,5146,National Council of Teachers of English,CONV,1,0.160025085
+66,12599,Heroes & Villains Fan Fest,PUB,2,0.173894079
+67,14781,Hosea Feed The Hungry & Homeless- Thanksgiving,CHRTY_GRAD,1,0.066326759
+68,14956,Sleepy Hollow,FILM_AWC,2,0.19740212
+69,12264,2016 Federal Student Aid Training Conference,CONV,1,0.16964293
+70,10914,9th World Congress on Prevention of Diabetes,MEET,0,0.187796637
+71,12067,Star City Games,PUB,1,0.185897566
+72,5940,SEC Football Championship,CONF_GAM,2,0.189551262
+73,12558,CheerSport Grand Championships,COMP,1,0.188160084
+74,13799,Dr Pepper Party,SMALL,2,0.197973826
+75,5170,NAIS 2016 People of Color Conference,CONV,0,0.163126981
+76,8588,GHSA State Championship Games,CONF_GAM,2,0.173798449
+77,14974,National Football Foundation,MEET,0,0.051591957
+78,14055,SoleFest,MEET,0,0.160238045
+79,15072,Zaxby's,FILM_AWC,1,0.197883718
+80,12074,Georgia State University Commencement 2016,CHRTY_GRAD,1,0.157387937
+81,11505,Celebration Bowl,CONF_GAM,2,0.18250391
+82,14826,Hosea Feed The Hungry & Homeless,CHRTY_GRAD,1,0.182859159
+83,13748,Dixie Nationals,COMP,1,0.145981562
+84,12810,Chick-fil-A Peach Bowl,CONF_GAM,2,0.180727146
+85,6080,Passion Conferences 2017,CONV,1,0.183338015
+86,13986,World's Greatest Hobby on Tour,PUB,1,0.175246577
+87,6867,Eggs & Issues,ME_OTH,1,0.172304828
+88,15055,24: Legacy,FILM_AWC,0,0.191555949
+89,13728,5 X Seminar,MEET,1,0.195901489
+90,5236,Progressive Insurance Atlanta Boat Show 2017,PUB,1,0.182576647
+91,11286,Lil Big South 2017,COMP,2,0.163875792
+92,14782,Hosea Feed The Hungry & Homeless,ME_OTH,1,0.124097015
+93,13290,Building Owners and Managers Association of Georgia,ME_OTH,1,0.154985198
+94,14847,Fulton State of the County Luncheon,ME_OTH,1,0.199462491
+95,5142,American Library Association,CONV,1,0.181279167
+96,13269,American Library Association-additional meeting rooms,MEET,1,0.197552167
+97,7955,CheerSport Grand Championships,COMP,2,0.1830016
+98,11649,Hot Chocolate 15/5K,SMALL,1,0.182887027
+99,14960,GES/IPPE,CON_P,0,0.178309765
+100,5758,Honda Battle of the Bands,COMP,2,0.175446899
+101,6205,2017 International Production & Processing Expo,CONV,1,0.17565745
+102,14696,Jurassic Quest,PUB,1,0.192631396
+103,13249,Allstate Southeast Region,MEET,1,0.188229769
+104,11468,Abbey Carpet & Floor / Floors to Go,CONV,2,0.168101136
+105,13519,Atlanta ACG Capital Connection,CONF_GAM,1,0.19350194
+106,5523,Ultimate Gym Sports - Paws for a Cause Invitational,COMP,1,0.165266121
+107,14843,Call of Duty World League: North American Regional,COMP,1,0.178988633
+108,10033,Bronner Bros. International Beauty Show,CONV,2,0.171002524
+109,12448,Georgia Bridal & Wedding Expo,PUB,1,0.185680309
+110,13178,2017 Georgia Entertainment Gala,CON_P,1,0.193826573
+111,13861,HD Supply Selling Family Summit,CONV,2,0.192273903
+112,7726,CHEERSPORT Nationals 2017,COMP,1,0.170978
+113,15410,MacGyver,FILM_AWC,0,0.195345587
+114,13169,Devnexus,CONF_GAM,1,0.162732147
+115,14699,Arenacross,COMP,1,0.145809887
+116,5895,Supercross,COMP,1,0.186529197
+117,14560,Hearth & Patio - Freeman,CON_P,1,0.178521248
+118,5060,"SECO International, LLC",CONV,2,0.179804854
+119,5328,Hearth Patio & Barbecue Association,CONV,2,0.181149996
+120,15321,Logan Lucky,FILM_AWC,0,0.192778097
+121,5221,"American Academy of Allergy, Asthma & Immunology",CONV,2,0.177728472
+122,14562,AutoShow - Freeman,CON_P,1,0.179878054
+123,13081,5Linx International Training Event,CONV,2,0.097454525
+124,12698,Starpower Competition,COMP,2,0.178580061
+125,5558,Ace Hardware Spring Convention & Exhibits,CONV,2,0.176816177
+126,15008,Nritya Natya Kala Bharti,CON_P,1,0.199158165
+127,13724,Junior Achievement Fellows Graduation,SMALL,1,0.173472597
+128,6113,2017 Atlanta International Auto Show,PUB,2,0.175583304
+129,15205,General Motors Auto Show Kick-off Breakfast,ME_OTH,2,0.199022513
+130,5499,Hinman Dental Meeting,CONV,2,0.180718787
+131,14877,ALPHA KAPPA ALPHA,CONF_GAM,0,0.156896716
+132,15138,Real Estate Mastermind,MEET,2,0.108196621
+133,6128,2017 Big South Qualifier,COMP,2,0.167798044
+134,12996,Revolution Talent Competition,COMP,2,0.194850287
+135,15260,Manifesto,FILM_AWC,1,0.155922264
+136,15154,Den of Thieves,FILM_AWC,1,0.186657627
+137,15249,H20scars,FILM_AWC,1,0.192287795
+138,10684,One Up Championship,COMP,2,0.17414945
+139,14394,ACVB Annual Meeting 2017,SMALL,1,-0.091611818
+140,10189,IDA Expo,CONV,1,0.178393141
+141,15677,AMBSE Press Event,ME_OTH,1,0.177836964
+142,10224,Southern Region Volleyball,COMP,2,0.170969566
+143,13817,2017 March for Babies,CHRTY_GRAD,1,0.183451337
+144,14965,Slammedenuff,PUB,0,0.191012354
+145,5343,National Rifle Association,CONV,1,0.174376003
+146,15691,Compass Group-People Summit,MEET,1,0.178058373
+147,5362,Interwire 2017,CONV,2,0.184353772
+148,13552,Sage Summit 2017,CONV,2,0.184955197
+149,15286,Pascal Desroches All Hands Meeting,MEET,1,0.186759032
+150,15179,Vaisakhi Mela,CON_P,1,0.191934969
+151,15079,Georgia Logistics Summit,MEET,1,0.189667585
+152,15418,Manifesto,FILM_AWC,1,0.190375107
+153,14400,Tri-Cities High School Class of 2017,CHRTY_GRAD,2,0.097931032
+154,12650,Georgia Piedmont Technical College,CHRTY_GRAD,2,0.191040114
+155,13985,Creekside High School Graduation,CHRTY_GRAD,2,-0.009135995
+156,14704,Langston Hughes Graduation,CHRTY_GRAD,2,0.163100055
+157,5106,Association for Talent Development,CONV,2,0.194653749
+158,13252,DeKalb County School Graduations,CHRTY_GRAD,2,0.185364379
+159,13422,Atlanta Independent School System Graduations,CHRTY_GRAD,2,0.15620399
+160,15745,ezFood Fest,SMALL,1,0.198430311
+161,7179,MomoCon,CONV,2,0.177529484
+162,14177,Southeast Regional Championships,COMP,1,0.164294775
+163,15257,CDC Center for Global Health 2017 Annual Meeting,SMALL,1,0.177201015
+164,11593,CFA Institute,MEET,2,0.161247112
+165,14059,CrossFit Games Atlantic Regional,COMP,1,0.161832398
+166,6371,Savannah College of Art and Design Graduation,CHRTY_GRAD,1,0.178953201
+167,13304,The Ultimate Women's Expo,PUB,1,0.159179377
+168,14295,2017 Southern Pole & Aerial Championships,COMP,1,0.167053127
+169,14821,73rd Annual Churches of Christ National Lectureship Festival in the Park and College Fair,SMALL,2,0.196182739
+170,15247,GMC-Fairburn  Graduation,CHRTY_GRAD,1,0.198705677
+171,15863,Omni Hotel at CNN Center,MEET,2,0.196347265
+172,13459,Home Furnishings Manufacturing Solutions Expo,CONV,1,0.172129755
+173,15146,Water & Sanitation Rotarian Action Group,MEET,2,0.189962774
+174,16006,Aqua Azul,FILM_AWC,2,0.188497634
+175,6005,Rotary International,CONV,1,0.167769928
+176,10866,Forest Products 2017,CONV,1,0.182002996
+177,14725,Herzing University Graduation,CHRTY_GRAD,1,0.147381854
+178,9177,National Association for Surface Finishing,CONV,1,0.16861044
+179,5367,National Apartment Association,CONV,1,0.190157614
+180,15997,DBE/SmallBusiness Outreach,MEET,2,0.198511615
+181,16053,Holder Construction Company Luncheon,ME_OTH,1,0.190540692
+182,15350,National Step League Championships 2017,COMP,1,0.191244404
+183,15723,Georgia Hotel Lodging Association Forecasting Meeting and HotelFest,ME_OTH,1,0.008691226
+184,14021,Solution Tree,MEET,2,0.135546115
+185,14263,USAW Kids National 2017,COMP,1,0.151752625
+186,15582,Fern/Gift Show,CON_P,2,0.198233488
+187,6588,Peachtree Health & Fitness Expo,PUB,2,0.171694417
+188,5851,School Nutrition Association 2017 Annual National Conference,CONV,1,0.178253006
+189,15033,Atlanta Build Expo,CONV,1,0.157093608
+190,14611,American InterContinental University Graduation,CHRTY_GRAD,1,0.1834498
+191,15868,AMBSE Hiring and Training Session FY18,MEET,1,0.195957097
+192,10735,2017 NPC Georgia Bodybuilding and Figure Championships,COMP,1,0.191839318
+193,13790,V-103 Car and Bike Show,PUB,2,0.168772279
+194,13576,The Big Event 2017,MEET,1,0.134137484
+195,13253,Insight Global Summer Olympics,SMALL,1,0.196472649
+196,14208,DreamHack Atlanta,COMP,1,0.176570251
+197,15644,Acura TLX Precision Crafted Training,SMALL,1,0.195265477
+198,15769,Fulton County Schools,SMALL,1,0.185498472
+199,15550,Year Up Greater Atlanta,CHRTY_GRAD,1,0.073095677
+200,12008,Junior World Champions,COMP,1,0.184131442
+201,15367,Atlanta Independent School System Graduation,CHRTY_GRAD,1,0.190073028
+202,16220,MacGyver,FILM_AWC,1,0.192540494
+203,14788,APS Back-to-School Bash,ME_OTH,0,0.179123663
+204,5148,International Association of Identification,CONV,0,0.13948743
+205,12480,Shaklee,CONV,0,0.164496079
+206,15881,2017 Hunger Project,ME_OTH,1,0.170811501
+207,16017,Dell Inc. - Tech Summit,CONV,0,0.19064174
+208,6175,Bronner Bros. International Beauty Show,CONV,0,0.173302689
+209,15157,Sync 2017,CONF_GAM,1,0.178586471
+210,15986,Chick-Fil-A Inc Field Day,SMALL,0,0.192176539
+211,14041,Kaman National Sales Conference,SMALL,0,0.162856605
+212,16421,ESPN College GameDay Production Offices,MEET,0,0.163236587
+213,6028,Chick-fil-A Kickoff Game Fan Activities,CONF_GAM,2,0.172092056
+214,14189,Kaiser Permanente Walk,SMALL,2,0.177075009
+215,14543,Glassbuild - Freeman,CON_P,2,0.194463998
+216,12179,HR Star Conference,CONF_GAM,2,0.183169995
+217,16030,Hire Dynamics,ME_OTH,2,0.196491357
+218,15825,Humana 5K 2017,SMALL,2,0.139251288
+219,5420,GlassBuild America 2017,CONV,0,0.177509612
+220,16576,Hanna Brothers,ME_OTH,2,0.197004801
+221,15417,Salesforce World Tour,MEET,2,0.189664013
+222,11459,McLeod Software 2017 User's Conference,MEET,2,0.17366192
+223,15439,GES/NACVS,CON_P,2,0.174442894
+224,15465,Fitness Retention Conference,CONF_GAM,2,0.143703673
+225,16396,Levy Restaurants Training Series,SMALL,2,0.199852795
+226,9419,Council of Supply Chain Management Professionals,CONV,0,0.183985263
+227,16478,Raspberry Pink Productions,CON_P,2,0.191180933
+228,13212,North American Commercial Vehicle Show,CONV,0,0.187122599
+229,5175,World Energy Engineering Congress (WEEC)/Association of Energy Engineers (AEE),CONV,0,0.184431759
+230,8728,BAI Beacon,CONV,2,0.186205146
+231,12314,Four Pillar Tribute,SMALL,2,0.129821592
+232,15578,Walk to Defeat ALS,CHRTY_GRAD,2,0.198068187
+233,16031,2017 Buddy Walk,CHRTY_GRAD,2,0.190940278
+234,5347,American Public Transportation Association,CONV,2,0.184649385
+235,15790,"Herbalife International of America, Inc.",CONF_GAM,2,0.16812396
+236,11502,2017 Susan G. Komen,CHRTY_GRAD,2,0.156795353
+237,15497,VMUG Regional User Group,MEET,1,0.19670591
+238,5465,American Dental Association Annual Session,CONV,2,0.183077829
+239,15682,APS Homecoming,CONF_GAM,2,0.13936561
+240,16312,THE FRONT RUNNER,FILM_AWC,2,0.196426705
+241,5056,Medtrade Conference & Expo,CONV,2,0.176501757
+242,14546,American Public Health - Freeman,CON_P,1,0.181602747
+243,15999,Carry the Torch,ME_OTH,1,0.199447758
+244,15980,2017 MLS Playoff - Knockout Round,SMALL,2,0.131221109
+245,10646,2017 Net Impact Conference,CONV,2,0.190038667
+246,13229,Walker Stalker Con,PUB,1,0.173379714
+247,15533,Tarpon Springs Band Booster,SMALL,2,0.182893899
+248,15421,Battle of the Dancelines,COMP,1,0.192809115
+249,14759,The Atlanta Women's Foundation - Numbers Too Big To Ignore,ME_OTH,2,0.172056186
+250,14665,State of the Region Breakfast,ME_OTH,2,0.168544671
+251,16370,Big Data Bootcamp,MEET,2,0.144417854
+252,5258,APHA - Annual Meeting & Exposition,CONV,1,0.141937545
+253,13513,The Ultimate Women's Expo,PUB,2,0.166863812
+254,15781,Cindy Trimm Ministries International,ME_OTH,2,0.065103855
+255,15858,United Way of Greater Atlanta,ME_OTH,2,0.181104292
+256,12725,Legacy of Excellence Awards,FILM_AWC,2,0.184809766
+257,14079,Star City Games,PUB,2,0.161160707
+258,16847,Starbucks Equipment Display Meeting,MEET,2,0.198673708
+259,15019,Academy of Educational Excellence Awards,FILM_AWC,2,0.192555992
+260,15235,Purple Stride Atlanta Walk,CHRTY_GRAD,1,0.182632313
+261,15878,Georgia Economic Developers Association,FILM_AWC,2,0.193947121
+262,16927,Heaven,FILM_AWC,2,0.191742531
+263,5125,National Association for the Education of Young Children,CONV,1,0.169031018
+264,13787,Heroes & Villains Fan Fest,PUB,2,0.170096816
+265,15446,Hosea Feed The Hungry & Homeless- Thanksgiving,CHRTY_GRAD,1,0.10198256
+266,16505,Antidote,FILM_AWC,2,0.19580156
+267,16652,Turner Broadcasting All Hands Meeting,MEET,2,0.196358411
+268,5943,Dr Pepper SEC FanFare,SMALL,2,0.163506087
+269,16432,SEC Dr Pepper Hospitality Party,SMALL,2,0.197416545
+270,15353,CheerSport Grand Championships,COMP,1,0.12970948
+271,5349,ASH Annual Meeting & Exposition,CONV,0,0.181822246
+272,14345,Celebration Bowl,CONF_GAM,2,0.146012224
+273,16705,New Wedding Ceremony,SMALL,2,0.156746858
+274,15447,Hosea Feed The Hungry & Homeless,CHRTY_GRAD,1,0.120030503
+275,15171,Dixie Nationals,COMP,1,0.119518983
+276,15450,Bassnectar,CON_P,0,0.16821629
+277,12804,Chick-fil-A Peach Bowl Fanfest,SMALL,1,0.165334625
+278,5245,College Football Playoff Natl Championship Ancillary Events at GWCC,SMALL,1,0.175682884
+279,17155,Star Season 2 Basecamp,FILM_AWC,0,0.146812195
+280,15314,Eggs & Issues,ME_OTH,1,0.17935795
+281,5479,Lil' Big South 2018,COMP,2,0.178559386
+282,16499,Herzing University Graduation,CHRTY_GRAD,1,0.19935597
+283,5149,Mary Kay Inc. 2018 Leadership Conference,CONV,1,0.163437005
+284,15487,Capital Expos-Vendors Exhibit,SMALL,1,0.197959495
+285,5235,Progressive Insurance Atlanta Boat Show 2018,PUB,1,0.183769103
+286,15356,CheerSport Grand Championships,COMP,2,0.184815902
+287,16822,Force of Will,CONF_GAM,1,0.195319319
+288,16848,Hosea Feed The Hungry & Homeless,ME_OTH,1,0.160775821
+289,17069,Americans Serving Americans,MEET,1,0.199371285
+290,17194,Councilmember Ivory Young Town Hall Meeting,MEET,1,0.185082314
+291,16668,Year Up Greater Atlanta Graduation,CHRTY_GRAD,1,0.174149981
+292,10201,Honda Battle of the Bands,COMP,2,0.199611373
+293,6207,2018 International Production & Processing Expo,CONV,1,0.181705547
+294,17053,Rent Due Comedy Show Starring WatchJazzy as Toya Turn Up,ME_OTH,1,0.195753422
+295,17386,The Expo Group/KeHE,CON_P,1,0.197232951
+296,16040,Hot Chocolate 5K/15K,SMALL,0,0.192894255
+297,6803,KeHE Distributors Summer Selling & Product Innovaton Show,CONV,2,0.175452413
+298,16140,The Expo Group/Bronner,CON_P,1,0.143281007
+299,5524,Ultimate Gym Sports - Paws for a Cause Invitational,COMP,1,0.189916846
+300,16512,Qi Revolution,ME_OTH,1,0.196850486
+301,10251,Bronner Bros. International Beauty Show,CONV,2,0.178043568
+302,15001,Georgia Bridal & Wedding Expo,PUB,1,0.171896522
+303,10347,Training Conference & Expo 2018,CONV,2,0.19171451
+304,6114,CHEERSPORT,COMP,1,0.174427509
+305,14533,Devnexus,CONF_GAM,1,0.180954042
+306,15679,Rite of Election,CONF_GAM,1,0.186408287
+307,16921,"The Total Health Forum, Hosted by the NBA and Kaiser Permanente",MEET,1,0.19931821
+308,17211,FBI's Domestic Security Alliance Council,MEET,1,0.199179673
+309,5061,"SECO International, LLC",CONV,2,0.171602604
+310,16128,Freeman/American Trucking Associations,CON_P,1,0.190814676
+311,16987,Monster Energy Supercross Pit Party,COMP,2,0.167883092
+312,11081,TMC Annual Meeting & Transportation Technology Exhibition,CONV,2,0.184306595
+313,6892,National Association of Independent Schools,CONV,2,0.190369792
+314,15189,Jurassic Quest,PUB,2,0.177018692
+315,15744,Call of Duty World League: Atlanta Global Open,COMP,2,0.189912696
+316,14771,Starpower Competition,COMP,2,0.187974557
+317,16335,NFL Retail Symposium,PUB,2,0.195984725
+318,8602,SNAXPO,CONV,2,0.18240809
+319,17154,DIAMOND JUBILEE USA MULAQAT,ME_OTH,2,0.185890742
+320,6279,National Science Teachers Association,CONV,2,0.172386839
+321,6118,2018 Atlanta International Auto Show,PUB,2,0.186556385
+322,15448,General Motors Auto Show Kick-off Breakfast,ME_OTH,2,0.19518745
+323,16988,Get Motivated,MEET,2,0.193616782
+324,5500,Hinman Dental Meeting,CONV,2,0.187390671
+325,17707,Wendy's March Madness Activation,ME_OTH,2,0.184419608
+326,16694,Regional Mathfest Competition,COMP,2,0.176743681
+327,16910,Nritya Natya Kala Bharti,CON_P,1,0.183002475
+328,15413,Pink Cultured Pearls,SMALL,1,0.188660277
+329,17267,Central Atlanta Progress Annual Meeting,ME_OTH,2,0.190858936
+330,6129,2018 Big South Qualifier,COMP,2,0.171937358
+331,17906,Roman Catholic Archdiocese of Atlanta,MEET,0,0.193089338
+332,5372,National Propane Gas Association,CONV,1,0.182713669
+333,5374,MODEX-2018,CONV,1,0.190822379
+334,14924,Revolution Talent Competition,COMP,2,0.181785799
+335,10716,One Up Championship,COMP,2,0.1868919
+336,16869,Wekfest Auto Show,SMALL,1,0.182761426
+337,17721,Boss Level,FILM_AWC,1,0.19791136
+338,17780,Our Promise Kick-Off Meeting (Session 1),MEET,0,0.196073518
+339,16661,ACVB Annual Meeting 2018,SMALL,1,0.191979078
+340,16357,DECA 2018,CONF_GAM,1,0.180691573
+341,9917,Southern Region Volleyball,COMP,2,0.188697779
+342,17531,FCS Spring Fair,SMALL,1,0.194727182
+343,7165,American Counseling Association,CONV,1,0.18567495
+344,17066,Herbalife,MEET,0,0.186431076
+345,16511,Perform Better Seminar,SMALL,1,0.199371521
+346,16920,IO Solution Examination,MEET,0,0.184893233
+347,18032,5TH Annual Rainbow 5K Run and 1 Mile Walk,CHRTY_GRAD,1,0.197583385
+348,13400,IFS World Conference 2018,CONF_GAM,0,0.195043301
+349,16492,"100,000 Initiatives Opportunity",SMALL,1,0.192277177
+350,16742,H2Oscars,FILM_AWC,1,0.193724583
+351,16187,VeloCity Cycling Event,SMALL,1,0.176782912
+352,17226,Alphas of Atlanta Foundation Inc,SMALL,1,0.187691428
+353,17844,Hansraj Hans and group MUBARAKAN,CON_P,1,0.192410685
+354,5613,COVERINGS 2018,CONV,2,0.184209487
+355,18003,State Bank & Trust Company,MEET,1,0.193756393
+356,12893,"Accelerate, Powered by NetVU",CONV,2,0.195642252
+357,17410,Fulton State of the County Luncheon,ME_OTH,1,0.2
+358,15903,Tri-Cities High School Class of 2018,CHRTY_GRAD,2,0.020879308
+359,16133,Freeman/JEC Americas Techtextil,CON_P,1,0.196819979
+360,16314,Creekside High School Graduation,CHRTY_GRAD,2,0.120409028
+361,19063,Banneker High School Graduation,CHRTY_GRAD,2,0.167897128
+362,16074,DeKalb County School Graduations,CHRTY_GRAD,2,0.148770372
+363,9108,Texprocess Americas + Techtextil North America,CONV,2,0.188324819
+364,15366,Atlanta Independent School System Graduations,CHRTY_GRAD,2,0.180939474
+365,7505,MomoCon,CONV,2,0.155673307
+366,17837,Southeast Regional Championships,COMP,1,0.164697091
+367,16181,Kenny Chesney Concert - GWCC Budget,CON_P,1,0.162218286
+368,17331,Social Security Administration Examination,MEET,1,0.195617623
+369,17485,American Taekwondo United National Championship,COMP,1,0.068567058
+370,6372,Savannah College of Art and Design Graduation,CHRTY_GRAD,1,0.154866737
+371,16692,The Ultimate Women's Expo,PUB,1,0.173973477
+372,17555,Pulse Boxing Match,CONF_GAM,0,0.182309786
+373,10149,American Society for Microbiology Microbe 2018,CONV,1,0.182324402
+374,17417,Herzing University Commencement,CHRTY_GRAD,1,0.199307644
+375,19234,Snickers,FILM_AWC,2,0.189016547
+376,16807,TUNER EVOLUTION,PUB,1,0.126803704
+377,17109,National Step League 7th Annual National Championship Step Show,COMP,1,0.14929484
+378,17914,Scaling New Heights Conference,MEET,2,0.157472083
+379,17973,Georgia Lodging Industry Forecast,MEET,2,0.191433485
+380,17834,The American Express Leadership Academy,MEET,2,0.196370846
+381,17578,"Jack & Jill of America, Inc. Southeastern Region",ME_OTH,1,0.195121001
+382,9921,Technology Student Association,CONV,1,0.138330484
+383,15363,CFA Institute,MEET,2,0.16535549
+384,17372,Fling - Layers of Music,CON_P,2,0.18894148
+385,15835,Solution Tree Culture Keepers,MEET,2,0.195313266
+386,17769,Walk to Defeat ALS,CHRTY_GRAD,2,-0.1
+387,16443,State of the Region Breakfast,ME_OTH,2,0.097026439
+388,12726,Legacy of Excellence Awards,FILM_AWC,2,0.191677958
+389,16456,Domotex USA,CONV,2,0.167500935
+390,21661,Road to Gold,SMALL,1,0.191889768
+391,10069,HAI HELI-EXPO 2019,CONV,2,0.173494591
+392,18877,DoTERRA,CONF_GAM,0,0.177967166
+393,19139,6th Annual Black Women in Jazz & Arts,FILM_AWC,0,0.189170377
+394,21282,Pulse Boxing Match,CONF_GAM,0,0.180605403
+395,17678,Rite of Election,CONF_GAM,0,0.193906106
+396,5899,TESOL 2019 International Convention & English Language Expo,CONV,2,0.160360248
+397,20740,CONCACAF Champions League Match Quarterfinal- GWCC Budget,CONF_GAM,0,0.162514469
+398,20779,CONFIDENTIAL: The Climate Reality Project's Leadership Corp Training,MEET,2,0.197352737
+399,21089,State of the City Mayor's Breakfast,ME_OTH,2,0.199052547
+400,17554,Skin Inc. Face & Body Spa Expo and Conference Southeast,MEET,2,0.177786342
+401,11082,TMC 2019 Annual Meeting & Transportation Technology Exhibition,CONV,2,0.189905621
+402,6121,2019 Atlanta International Auto Show,SMALL,1,0.175356216
+403,5501,Hinman Dental Meeting,CONV,2,0.186260022
+404,16964,Georgia Bridal & Wedding Expo,PUB,2,0.167784818
+405,17152,Starpower International Talent Competition,COMP,2,0.197071741
+406,20072,Dental Dash at Dawn 5k,CHRTY_GRAD,0,0.194429146
+407,21889,Lovestruck,FILM_AWC,0,0.194636452
+408,21957,Get Motivated Atlanta,PUB,2,0.196611678
+409,10925,AACR Annual Meeting 2019,CONV,2,0.095373131

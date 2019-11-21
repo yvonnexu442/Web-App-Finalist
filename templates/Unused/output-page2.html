@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .header{
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        color:#26a1a1;
+        position:relative;
+        top:-50;
+        left:300;
+        font-size: 30px;
+    } 
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: white!important;
+        background-color: #143055 !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+    
+    table, th, td {
+        border: 1px solid black;
+        font-family: 'Times New Roman';
+        font-size: 40px;
+        width: 60px;
+        color: white;
+        background-color: white;
+        align: center;
+        position: relative;
+        top: 0px;
+        
+        }
+    /* body {
+        background: url('/Users/Yvonne/Documents/GitHub/front-end/static/GWCC_Aerial_View.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        } */            
+    div.background {
+        background: url('/static/bgtest2.jpg');
+        background-size: cover;
+        border: 0.5px solid #143055;
+        opacity: 1;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 2px solid #143055;
+        opacity: 1;
+    }
+
+    div.transbox p {
+        margin: 10%;
+        font-weight: bold;
+        color: #143055;
+    }
+    .font-weight-normal {
+        font-weight: 400!important;
+    }
+
+    .text-center {
+        text-align: center!important;
+    }
+
+    .text-muted {
+        color: #6c757d!important;
+    }
+
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+
+    .mb-0, .my-0 {
+        margin-bottom: 0!important;
+    }
+    .mt-0, .my-0 {
+        margin-top: 0!important;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem! important;
+    }
+
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem! important;
+    }
+
+    h2 {
+        color: #143055
+    }
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        word-wrap: break-word;
+        background-color: white;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+            border-top-color: rgba(0, 0, 0, 0.125);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.125);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-bottom-color: rgba(0, 0, 0, 0.125);
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-left-color: rgba(0, 0, 0, 0.125);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+        border-radius: .25rem;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+    }
+    .card-deck {
+        display: flex;
+        min-width: 220px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .card-header {
+        padding: 1.25rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    div {
+        display: block;
+    }
+
+
+
+</style>
+</head>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                <li class="dropdown"><a style="color: white" href="#" class="dropdown-toggle" 
+                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-tags"></i> Functionality
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1:5000/room-page"> Room Selection</a></li>
+                <li class="active" style="color: #143055"><a href="http://127.0.0.1:5000/output-page"> Pricing</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1:5000/output-page">Overall Results</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-primary"> Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown" 
+                    role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-question"></i> Help
+                    <span class="caret"></span>   
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Package Required</a></li>
+                        <li><a href="#">Data Required</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Room Selection Manual</a></li>
+                        <li><a href="#">Pricing Manual</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="color: white"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <li><a href="http://127.0.0.1:5000/main-page" style="color: white"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class = "navbar-brand" href="#" style="color: white">GWCCA</a>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="main-page" style="color: white">Login</a></li>
+                <li><a href="main-page" style="color: white">Event Information</a></li>
+                <li><a href="room-page" style="color: white">Room Allocation</a></li>
+                <li><a href="calendar-page" style="color: white">Calendar</a></li>
+                <li><a href="output-page" style="color: white">Output</a></li>
+                <li><a href="/" style="color: white">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+<body>
+<div class="background">
+    <div class="transbox">
+        <div class="container">
+            <h1 class="mt-4 mb-3" style="color: #143055">Baseline Price 
+            <small>Cost Prediction & Profit Margin Cluster</small>
+            </h1>    
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="room-page">Functionality</a>
+                </li>
+                <li class="breadcrumb-item active">Pricing</li>
+            </ol>
+
+
+    
+            <div class="card-deck md-3 text-center">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal" style="color: #143055">Search</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Event ID/Name...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" onclick="http://127.0.0.1:5000/main-page">Go</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-5 center">
+                    <!-- <div class="card h-100"> -->
+                    <div class="card-deck md-3">
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-header" style="color: #143055">
+                                <h4 class="my-0 font-weight-normal text-center" style="color: #143055">Cost Prediction</h4>
+                            </div>
+                                <div class="card-body text-center">
+                                    <h1 style="color: #143055">$87,000</h1>
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Expected Attendance
+                                                <div class="text-center"><h2 class="mb-3">7,890
+                                                    <small>people</small></h2></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4 class="mb-1">Event Length
+                                            <div class="text-center"><h2 class="mb-3">8   
+                                            <small>days</small></h2></div>
+                                        </h4>
+                                    </div>
+                                    <small class="text-muted">Click to edit</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4 class="mb-1">SQFT Requested
+                                            <div class="text-center"><h2 class="mb-3">98,000    
+                                             <small>SQFT</small></h2></div>
+                                        </h4>
+                                    </div>
+                                    <small class="text-muted">Click to edit</small>
+                                </a>
+                            </div>
+                    </div>
+                    <!-- </div> -->
+                    </div>
+                </div>
+                        
+                <div class="row d-flex justify-content-center">
+                    <!-- <div class="col-lg-4 mb-4"> -->
+                    <div class="col-lg-5 center">
+                        <div class="card-deck md-3">
+                            <div class="card mb-4 box-shadow">
+                                <div class="card-header text-center" style="color: #143055">
+                                    <h4 class="my-0 font-weight-normal text-center" style="color: #143055">
+                                    Baseline Price</h4>
+                                </div>
+                                <div class="card-body">
+                                    <h1 class="text-center" style="color: #143055">$100,000</h1>
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Event Type
+                                                <div class="text-center"><h2 class="mb-3">Conference
+                                                <small>Technology</small></h2></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Demand Result
+                                                <div class="text-center"><h2 class="mb-3">Peak   
+                                                <small>Season</small></h2></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Suggested Margin
+                                                <div class="text-center"><h2 class="mb-3">18.87   
+                                                <small>%</small></h2></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>  
+        </div>   
+        <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <a class="btn btn-primary" onclick="location.href='http://127.0.0.1:5000/output-page'">
+                        <i class="fa fa-fw fa-download"></i> Export to PDF</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <a class="btn btn-primary" onclick="location.href='http://127.0.0.1:5000/main-page'">
+                        <i class="fa fa-fw fa-download"></i> Export to Excel</a>
+                    </div>
+                </div>
+                <div style="height: 30px"></div>
+            </div>
+        <div class="container">
+                <div class="card-deck md-3 text-center">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal" style="color: #143055">Cluster Outputs</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title cost-card-title">
+                                $87,000
+                                <small class="text-muted">/ day</small>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
+</body>
+<style>
+    body {
+        font-family:"Source Sans Pro";
+        font-weight: 600;
+        color:#143055;
+        background-color: #FFFFFF;
+    }
+</html>

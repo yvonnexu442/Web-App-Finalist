@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <link href="style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="static/jss/input-page.js"></script> 
+    
+
+</head>
+
+<script>
+        var rawData = JSON.parse({{data|tojson}}.replace(/'/g, '"'));
+        var eventInfo = JSON.parse({{eventInfo|tojson}}.replace(/'/g, '"'));
+
+// load logout popup 
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+</script>
+
+<style> 
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc {
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+}
+/* Popup box END */
+/*/* Popup container */
+
+/*.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  left:40%;
+  top:50px;
+}
+
+/* The actual popup (appears on top) */
+/*.popup .popuptext {
+  visibility: hidden;
+  width: 400px;
+  height: 130px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+/*.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+/*.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+/*@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}*/
+    .text{
+        color:#143055;
+        position:relative;
+        top:400px;
+        text-align: center;
+        display: inline block;
+    }
+    .room_info{
+        color:#143055;
+        position:relative;
+        top: 450px;
+        left: center;
+        text-align: center;
+        display: inline block;
+    }
+    .btn{
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      position: relative;
+      top: -34px;
+      left: 208px;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    .header{
+        font-family: "HelveticaNeue-Light";
+        font-weight: 600;
+        color:#26a1a1;
+        position:relative;
+        top:-50;
+        left:300;
+        font-size: 30px;
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #143055 !important;
+        background-color: white !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+    table, th, td {
+        border: 1px solid black;
+        font-family: "HelveticaNeue-Light";
+        font-size: 18px;
+        width: 500px;
+        color: white;
+        background-color: white;
+        align: center;
+        position: relative;
+        top: 0px;
+        left:-38px;
+    }
+    .list-inline {
+            padding-left: 0;
+            list-style: none;
+    }
+    .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+    }
+    .mb-auto, .my-auto {
+        margin-bottom: auto!important;
+        margin-top: auto!important
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+        
+    footer.footer {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .bg-dark {
+        background-color: #143055!important;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .text-muted {
+        color: lightblue!important;
+    }
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+
+/*Room Change PopUp*/
+.roomchange__form {
+  width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: absolute;
+  top:100px;
+  border-top: 5px solid #143055;
+  margin: 0 auto;
+  left: 50%;
+  margin-left: -200px;
+  display: none;
+}
+.roomchange__form fieldset {
+  border: 0;
+}
+.roomchange__form h3 {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 12px;
+}
+.roomchange__form input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 20px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: "HelveticaNeue-Light";
+  padding: 0 20px 0 50px;
+  outline: none;
+}
+
+/*.login__form input#username {
+  background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login__form input#username:focus {
+  background: #fff url('http://i.imgur.com/u0XmBmv.png') 20px bottom no-repeat;
+  background-size: 16px 80px;
+}
+.login__form input#password
+{
+  background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login__form input#password:focus {
+  background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
+  background-size: 16px 80px;
+  }*/
+.roomchange__form input:active,
+.roomchange__form input:focus {
+  border: 1px solid #143055;
+}
+.navbar-form{
+  width: 202.67px;
+  height: 34px;
+}
+.roomchange__form input#button {
+  width: 100%;
+  height: 40px;
+  background: #143055;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "HelveticaNeue-Light";
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.roomchange__form input#button:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+#bldgA{
+  background-image: url('static/p1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bldgB{
+  background-image: url('static/p2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bldgC{
+  background-image: url('static/p3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron{
+  min-height: 500px;
+  flex: 1;
+  border-style:solid;
+  border-width: thin;
+  background-size: 100% 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.jumbotron h1{
+  display: flex;
+  font-family: Georgia;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 4px 4px #143055;
+  padding-top: 40%;
+  position: relative;
+  font-size: 60px;
+  left: 18%;
+  color: white !important;
+}
+.animated {
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.jumbotron .bg-overlay {
+  display: flex;
+  background: rgba(0,0,0,0.1);
+  min-height: 500px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.jumbotron:hover .bg-overlay {
+  background: rgba(8,19,33,0.7);
+  min-height: 500px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#formADisplay{
+  display: none;
+  background: transparent;
+}
+#formBDisplay{
+  display: none;
+  background: transparent;
+  width: 400px;
+}
+#formCDisplay{
+  display: none;
+  width: 400px;
+  background: transparent;
+}
+#bldgAHeader{
+  display: block;
+}
+#bldgBHeader{
+  display: block;
+}
+#bldgCHeader{
+  display: block;
+}
+.hideData{
+  display:none;
+}
+table, th, td{
+  background-color: none;
+  background: transparent;
+  font-family: "HelveticaNeue-Light";
+  font-size: 18px;
+  border: none;
+}
+.remove{
+  color: red;
+  position: relative;
+  left: 10px;
+  top: 1px;
+}
+.add{
+  color: green;
+  position: relative;
+  left: 10px;
+  top: 1px;
+}
+.optionRoom{
+  color: black;
+}
+td:first-child {
+  width: 20px;
+  min-width: 20px;
+  max-width: 20px;
+}
+td:nth-child(2) {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  position: relative;
+  left: 30px;
+}
+/*.roomchange__form input#cancel {
+  width: 100%;
+  height: 40px;
+  background: #143055;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: Montserrat;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.roomchange__form input#cancel:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}*/
+#btnB{
+  position: relative;
+  left: -10px;
+}
+#btnC{
+  position: relative;
+  left: -10px;
+}
+#postData{
+  height: 50px;
+  position: relative;
+  top: -35px;
+  left: 350px;
+}
+
+
+
+/*Contact Dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:50px;
+  right:110px;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: HelveticaNeue-Light;
+  color: #143055;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+</style>
+
+
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="color: lightskyblue" 
+                href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                    <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li><a style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                    <li><a style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                    <form id="postData" action="{{url_for('regmodel')}}"> 
+                      <button class="btn btn-primary" style="margin-top: 26px; margin-left:-150px">
+                        <li id="submitRooms"><a style="color: white"></i> Proceed For Pricing Results >></a></li></button>
+                      <input class="hideData" id="sqftPerEvent" name="sqftPerEvent"></input>
+                      <input class="hideData" id="orderedRentTotal" name="orderedRentTotal"></input>
+                      <input class="hideData" id="Attendance" name="Attendance"></input>
+                      <input class="hideData" id="totalRoomNights" name="totalRoomNights"></input>
+                      <input class="hideData" id="FB" name="FB"></input>
+                      <input class="hideData" id="eventDuration" name="eventDuration"></input>
+                      <input class="hideData" id="contactTillStart" name="contactTillStart"></input>
+                      <input class="hideData" id="rooms" name="rooms"></input>
+                      <input class="hideData" id="eventType" name="eventType"></input>
+                      <input class="hideData" id="dateIn" name="dateIn"></input>
+                      <input class="hideData" id="eventName" name="eventName"></input>
+                      <input class="hideData" id="startDate" name="startDate"></input>
+                      <input class="hideData" id="endDate" name="endDate"></input>
+                      <input class="hideData" id="subDate" name="subDate"></input>
+                    </form>
+                    
+                    <!-- <li class="dropdown"><a style="color: white" href="#" class="dropdown-toggle" 
+                        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-fw fa-tags"></i> Functionality
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                    <li class="active"><a href="http://127.0.0.1:5000/room-page"> Room Selection</a></li>
+                    <li><a href="http://127.0.0.1:5000/output-page"> Pricing</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="http://127.0.0.1:5000/output-page">Overall Results</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+                <!-- <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-primary"> Submit</button>
+                </form> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                    <li><a href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+
+<li><a style="color: white" class="trigger_popup_fricc" href="/"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+
+        </div>
+    </div>
+    </nav>
+<body>
+  <div class="row">
+    <div id="formA" onmouseover='showForm("A");' onmouseout='hideForm("A");'>
+      <div class="jumbotron text-center col-md-4" id="bldgA">
+        <div class="bg-overlay animated">
+          <h1 class="display-4 headerBldg" id="bldgAHeader">Building A</h1>
+          <div id="formADisplay"></div>
+        </div>
+      </div>
+    </div>
+    <div class="jumbotron text-center col-md-4" id="bldgB">
+      <div id="formB" onmouseover='showForm("B");' onmouseout='hideForm("B");'>
+      <div class="bg-overlay animated">
+        <h1 class="display-4 headerBldg" id="bldgBHeader">Building B</h1>
+        <div id="formBDisplay"></div>
+      </div>
+     </div>
+    </div>
+    <div id="formC" onmouseover='showForm("C");' onmouseout='hideForm("C");'>
+      <div class="jumbotron text-center col-md-4" id="bldgC">
+        <div class="bg-overlay animated">
+          <h1 class="display-4 headerBldg" id="bldgCHeader">Building C</h1>
+          <div id="formCDisplay"></div>
+        </div>
+      </div>
+   </div>
+  </div>
+  
+
+                <script>
+dataA = rawData.A
+dataB = rawData.B
+dataC = rawData.C
+if(dataA==null){
+  lengthA = 0;
+} else{
+  lengthA = dataA.length;
+}
+if(dataB==null){
+  lengthB = 0;
+} else {
+  lengthB = dataB.length;
+}
+if(dataC==null){
+  lengthC = 0;
+} else {
+  lengthC = dataC.length;
+}
+
+if(dataA==null && dataB==null && dataC==null){
+  allRooms = ""
+} else {
+  if(dataA==null){
+    if(dataB==null){
+      allRooms = dataC
+    } else {
+      allRooms = dataB.concat(dataC)
+    }
+  }else if (dataB==null){
+    if(dataA==null){
+      allRooms = dataC
+    }else {
+      allRooms = dataA.concat(dataC)
+    }
+  }else if(dataC==null){
+    if(dataA==null){
+      allRooms = dataB
+    } else {
+      allRooms = dataA.concat(dataB)
+    }
+  } else {
+    allRooms = dataA.concat(dataB).concat(dataC)
+  }
+}
+
+var roomsRawData = ["Exhibit Hall A1",
+"Exhibit Hall A2",
+"Exhibit Hall A3",
+"Exhibit Hall Meeting Room A101",
+"Exhibit Hall Meeting Room A102",
+"Exhibit Hall Meeting Room A103",
+"Meeting Room A301",
+"Meeting Room A302",
+"Meeting Room A303",
+"Meeting Room A304",
+"Meeting Room A305",
+"Meeting Room A306",
+"Meeting Room A307",
+"Meeting Room A308a",
+"Meeting Room A308b",
+"Meeting Room A309",
+"Meeting Room A310",
+"Meeting Room A311",
+"Meeting Room A312",
+"Meeting Room A313",
+"Meeting Room A314",
+"Meeting Room A315",
+"Meeting Room A316",
+"Building A Registration Hall",
+"Building A-B Registration Hall",
+"Executive Boardroom",
+"Meeting Room A401",
+"Meeting Room A402",
+"Meeting Room A403",
+"Meeting Room A404",
+"Meeting Room A405",
+"Meeting Room A406",
+"Meeting Room A407",
+"Meeting Room A408",
+"Meeting Room A409",
+"Meeting Room A410",
+"Meeting Room A411",
+"Meeting Room A412",
+"Meeting Room A412A",
+"Sidney Marcus Auditorium",
+"Exhibit Hall B1",
+"Exhibit Hall B2",
+"Exhibit Hall B3",
+"Exhibit Hall B4",
+"Exhibit Hall B5",
+"Exhibit Hall Meeting Room B101",
+"Exhibit Hall Meeting Room B102",
+"Exhibit Hall Meeting Room B103",
+"Meeting Room B201",
+"Meeting Room B202",
+"Meeting Room B203",
+"Meeting Room B204",
+"Meeting Room B205",
+"Meeting Room B206",
+"Meeting Room B207",
+"Meeting Room B208",
+"Meeting Room B209",
+"Meeting Room B210",
+"Meeting Room B211",
+"Meeting Room B212",
+"Meeting Room B213",
+"Meeting Room B214",
+"Meeting Room B215",
+"Meeting Room B216",
+"Meeting Room B217",
+"Meeting Room B218",
+"Meeting Room B301",
+"Meeting Room B302",
+"Meeting Room B303",
+"Meeting Room B304",
+"Meeting Room B305",
+"Meeting Room B306",
+"Meeting Room B307",
+"Meeting Room B308",
+"Meeting Room B309",
+"Meeting Room B310",
+"Meeting Room B311",
+"Meeting Room B312",
+"Meeting Room B313",
+"Meeting Room B313A",
+"Meeting Room B313B",
+"Meeting Room B314",
+"Meeting Room B315",
+"Meeting Room B316",
+"Meeting Room B317",
+"Meeting Room B318",
+"Meeting Room B319",
+"Building B Registration Hall",
+"International Conference Room",
+"Meeting Room B401",
+"Meeting Room B402",
+"Meeting Room B403",
+"Meeting Room B404",
+"Meeting Room B405",
+"Meeting Room B406",
+"Meeting Room B406A",
+"Meeting Room B406B",
+"Meeting Room B407",
+"Meeting Room B408",
+"Meeting Room B409",
+"Meeting Room B411",
+"Authority Boardroom",
+"Thomas Murphy Ballroom 1",
+"Thomas Murphy Ballroom 2",
+"Thomas Murphy Ballroom 3",
+"Thomas Murphy Ballroom 4",
+"Exhibit Hall C1",
+"Exhibit Hall C2",
+"Exhibit Hall C3",
+"Exhibit Hall C4",
+"Exhibit Hall Meeting Room C111",
+"Exhibit Hall Meeting Room C112",
+"Exhibit Hall Meeting Room C113",
+"Exhibit Hall Meeting Room C114",
+"Meeting Room C103",
+"Meeting Room C104",
+"Meeting Room C105",
+"Meeting Room C106",
+"Meeting Room C107",
+"Meeting Room C108",
+"Meeting Room C109",
+"Meeting Room C110",
+"Room C101 Auditorium",
+"Room C102 Auditorium",
+"Meeting Room C201",
+"Meeting Room C202",
+"Meeting Room C203",
+"Meeting Room C204",
+"Meeting Room C205",
+"Meeting Room C206",
+"Meeting Room C207",
+"Meeting Room C208",
+"Meeting Room C209",
+"Meeting Room C210",
+"Meeting Room C211",
+"Meeting Room C212",
+"Meeting Room C213",
+"Georgia Ballroom 1",
+"Georgia Ballroom 2",
+"Georgia Ballroom 3",
+"Meeting Room C301",
+"Meeting Room C302",
+"Meeting Room A308",
+"Exhibit Hall BC"];
+
+var allRooms = allRooms.filter(function (el) {
+  return el != null;
+});
+eventInfo["rooms"] = allRooms
+document.getElementById("sqftPerEvent").value = eventInfo["sqftPerEvent"]
+document.getElementById("orderedRentTotal").value = eventInfo["orderedRentTotal"]
+document.getElementById("Attendance").value = eventInfo["Attendance"]
+document.getElementById("totalRoomNights").value = eventInfo["totalRoomNights"]
+document.getElementById("FB").value = eventInfo["FB"]
+document.getElementById("eventDuration").value = eventInfo["eventDuration"]
+document.getElementById("contactTillStart").value = eventInfo["contactTillStart"]
+document.getElementById("rooms").value = eventInfo["rooms"]
+document.getElementById("eventType").value = eventInfo["eventType"]
+document.getElementById("dateIn").value = eventInfo["dateIn"]
+document.getElementById("eventName").value = eventInfo["eventName"]
+document.getElementById("startDate").value = eventInfo["startDate"]
+document.getElementById("endDate").value = eventInfo["endDate"]
+document.getElementById("subDate").value = eventInfo["subDate"]
+
+//BUILDING A
+var tablearea = document.getElementById('formADisplay'),
+    table = document.createElement('table');
+table.setAttribute("id", "tableA");
+for (var i = 0; i < lengthA+1; i++) {
+    var currBldg = "A"
+    if(lengthA>1){
+      var tr = document.createElement('tr');
+      if(i==lengthA){
+        tr.id = "addRowA"
+      }
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i<lengthA){
+        tr.cells[0].innerHTML = '<a class="btn remove" onclick="remove(this)"><i style="position:relative; left:80px" class="fa fa-minus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].appendChild( document.createTextNode(dataA[i]) );
+        tr.cells[1].align = "left"
+        tr.cells[1].style = "left: 65px;"
+      } else {
+        tr.cells[0].innerHTML = '<a class="btn add"  id="A" onclick="addNewRowAbove(this)"><i style="position:relative; left:80px" class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomA">Add Room</select>'
+        tr.cells[1].style = "left:65px;"
+      }
+      
+      table.appendChild(tr);
+    } else {
+      var tr = document.createElement('tr');
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i==lengthA){
+        tr.id = "addRowA"
+        tr.cells[0].innerHTML = '<a class="btn add"  id="A" onclick="addNewRowAbove(this)"><i style="position:relative; left:80px" class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomA">Add Room</select>'
+        tr.cells[1].style = "left:65px;"
+      }
+      table.appendChild(tr);
+    }
+    
+}
+tablearea.appendChild(table);
+
+
+var select = document.getElementById("addRoomA"); 
+select.style = "width: 250px; color:black; position:relative; left:-110px;";
+var def = document.createElement("option");
+def.disabled = true;
+def.selected = true;
+def.hidden = true;
+def.style = "color:black;"
+def.textContent = "Add Room"
+select.appendChild(def);
+roomsrawA = roomsRawData.slice(0, 40);
+for(var i=0; i<roomsrawA.length; i++){
+  var opt = roomsrawA[i], el=document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  el.style = "color: black;"
+  select.appendChild(el);
+}
+
+//BUILDING B
+var tableareaB = document.getElementById('formBDisplay'),
+    tableB = document.createElement('tableB');
+tableB.setAttribute("id", "tableB");
+for (var i = 0; i < lengthB+1; i++) {
+    var currBldg = "B"
+    if(lengthB>1){
+      var tr = document.createElement('tr');
+      if(i==lengthB){
+        tr.id = "addRowB"
+      }
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i<lengthB){
+        tr.cells[0].innerHTML = '<a class="btn remove" onclick="remove(this)"><i style="position: relative; left:-10px"  class="fa fa-minus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].appendChild( document.createTextNode(dataB[i]) );
+        tr.cells[1].align = "left"
+        tr.cells[1].style = "position: relative; left:-15px"
+      } else {
+        tr.cells[0].innerHTML = '<a class="btn add" id="B" onclick="addNewRowAbove(this)"><i id="btnB"  class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomB">Add Room</select>'
+        
+      }
+      
+      tableB.appendChild(tr);
+    } else {
+      var tr = document.createElement('tr');
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i==lengthB){
+        tr.id = "addRowB"
+        tr.cells[0].innerHTML = '<a class="btn add" id="B" onclick="addNewRowAbove(this)"><i id="btnB" class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomB">Add Room</select>'
+      }
+      tableB.appendChild(tr);
+    }
+    
+}
+tableareaB.appendChild(tableB);
+
+var selectB = document.getElementById("addRoomB"); 
+selectB.style = "width: 250px; color:black; position:relative; left:-68px;";
+var def = document.createElement("option");
+def.disabled = true;
+def.selected = true;
+def.hidden = true;
+def.style = "color:black;"
+def.textContent = "Add Room"
+selectB.appendChild(def);
+roomsrawB = roomsRawData.slice(40, 105);
+for(var i=0; i<roomsrawB.length; i++){
+  var opt = roomsrawB[i], el=document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  el.style = "color: black;"
+  selectB.appendChild(el);
+}
+
+
+//BUILDING C
+var tableareaC = document.getElementById('formCDisplay'),
+    tableC = document.createElement('tableC');
+tableC.setAttribute("id", "tableC");
+for (var i = 0; i < lengthC+1; i++) {
+    var currBldg = "C"
+    if(lengthC>1){
+      var tr = document.createElement('tr');
+      if(i==lengthC){
+        tr.id = "addRowC"
+      }
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i<lengthC){
+        tr.cells[0].innerHTML = '<a class="btn remove" onclick="remove(this)"><i style="position: relative; left:-10px" class="fa fa-minus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].appendChild( document.createTextNode(dataC[i]) );
+        tr.cells[1].align = "left"
+        tr.cells[1].style = "position: relative; left:-15px"
+      } else {
+        tr.cells[0].innerHTML = '<a class="btn add" id="C" onclick="addNewRowAbove(this)"><i id="btnC"  class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomC">Add Room</select>'
+        
+      }
+      
+      tableC.appendChild(tr);
+    } else {
+      var tr = document.createElement('tr');
+      tr.appendChild( document.createElement('td') );
+      tr.appendChild( document.createElement('td') );
+      if(i==lengthC){
+        tr.id = "addRowC"
+        tr.cells[0].innerHTML = '<a class="btn add" id="C" onclick="addNewRowAbove(this)"><i id="btnC" class="fa fa-plus-circle" aria-hidden="true"></i></a>'
+        tr.cells[1].innerHTML = '<select id="addRoomC">Add Room</select>'
+      }
+      tableC.appendChild(tr);
+    }
+    
+}
+tableareaC.appendChild(tableC);
+
+var selectC = document.getElementById("addRoomC"); 
+selectC.style = "width: 250px; color:black; position:relative; left:-68px;";
+var def = document.createElement("option");
+def.disabled = true;
+def.selected = true;
+def.hidden = true;
+def.style = "color:black;"
+def.textContent = "Add Room"
+selectC.appendChild(def);
+roomsrawC = roomsRawData.slice(105, 144);
+for(var i=0; i<roomsrawC.length; i++){
+  var opt = roomsrawC[i], el=document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  el.style = "color: black;"
+  selectC.appendChild(el);
+}
+
+
+
+
+function addNewRowAbove(btn){
+  bldg = btn.id;
+  var rowNumber=document.getElementById("addRow"+bldg).value;
+  var rowNumberNew = parseInt(rowNumber)- 1 ;
+  var newRow = $('<tr/>').attr('id', 'row' + rowNumberNew);
+  var dropdown = document.getElementById("addRoom"+bldg)
+  var dropDownVal = dropdown.options[dropdown.selectedIndex].value
+  if (dropDownVal!="Add Room"){
+    if(bldg=="A"){
+      newRow.html('<td><a class="btn remove" onclick="remove(this)"><i style="position:relative; left:80px;" class="fa fa-minus-circle" aria-hidden="true"></i></a></td><td align="left" style="position:relative; left:65px;">' + dropDownVal + '</td>');
+    } else if (bldg=="B") {
+      newRow.html('<td><a class="btn remove" onclick="remove(this)"><i id="btnB" class="fa fa-minus-circle" aria-hidden="true"></i></a></td><td align="left" style="position:relative; left:-15px;">' + dropDownVal + '</td>');
+    } else {
+      newRow.html('<td><a class="btn remove" onclick="remove(this)"><i id="btnC" class="fa fa-minus-circle" aria-hidden="true"></i></a></td><td align="left" style="position:relative; left:-15px;">' + dropDownVal + '</td>');
+    }
+    
+    $("#addRoom" + bldg + " option[value='" + dropDownVal + "']").remove();
+    
+    newRow.insertBefore('#addRow'+bldg);
+    allRooms.push(dropDownVal);
+    
+    eventInfo["rooms"] = allRooms
+    document.getElementById("rooms").value = eventInfo["rooms"]
+  }
+  console.log(eventInfo);
+}
+
+function remove(o){
+  var p=o.parentNode.parentNode;
+  var bldg = p.parentNode.id.slice(-1);
+  console.log(bldg);
+  var roomDel = p.getElementsByTagName("td")[1].innerHTML
+  var index = allRooms.indexOf(roomDel);
+  if (index > -1) {
+    allRooms.splice(index, 1);
+  }
+  p.parentNode.removeChild(p);
+  eventInfo["rooms"] = allRooms
+  document.getElementById("rooms").value = eventInfo["rooms"]
+  $('#addRoom'+bldg).append('<option>' + roomDel + '</option>');
+  console.log(eventInfo);
+  }
+
+function showForm(bldg){
+  if(bldg=="A"){
+    document.getElementById("bldgAHeader").style.display = "none";
+    document.getElementById("formADisplay").style.display = "block";
+  } else if(bldg=="B"){
+    document.getElementById("bldgBHeader").style.display = "none";
+    document.getElementById("formBDisplay").style.display = "block";
+  } else if(bldg=="C"){
+    document.getElementById("bldgCHeader").style.display = "none";
+    document.getElementById("formCDisplay").style.display = "block";
+  }
+  
+}
+function hideForm(bldg){
+  if(bldg=="A"){
+    document.getElementById("bldgAHeader").style.display = "block";
+    document.getElementById("formADisplay").style.display = "none";
+  } else if(bldg=="B"){
+    document.getElementById("bldgBHeader").style.display = "block";
+    document.getElementById("formBDisplay").style.display = "none";
+  } else if(bldg=="C"){
+    document.getElementById("bldgCHeader").style.display = "block";
+    document.getElementById("formCDisplay").style.display = "none";
+  }
+  
+}
+
+                       </script>
+
+<br>
+
+
+<!-- We need to have the rooms selected to show up in the "which rooms would you like to delete"
+and all other available rooms need to show up in the "which rooms would you like to add" -->
+<form name="login" class="roomchange__form" id="login-form">
+  <h3>Edit Rooms</h3>
+  <fieldset>
+  <h4>Which room(s) would you like to delete?</h4>
+ <select multiple name="rooms">
+  <option value="volvo">Exhibit Hall A</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+<h4> Which room(s) would you like to add?</h4>
+ <select multiple name="rooms">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+    <input type="submit" value="Submit" id="button">
+    <input type="submit" value="Cancel" id="button" onClick="location.href='/room-page'">
+  </fieldset>
+</form>
+                        <p id="confirm"></p>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer class="footer bg-dark" style="margin-top: -60px">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-6 h-100 text-center my-auto">
+            <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+                <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+            </li>
+            <li class="list-inline-item" style="color: white">&sdot;</li>
+            <li class="list-inline-item">
+                <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+            </li>
+            <li class="list-inline-item" style="color: white">&sdot;</li>
+            <li class="list-inline-item">
+                <a href="#" style="color: white">Terms of Use</a>
+            </li>
+            <li class="list-inline-item" style="color: white">&sdot;</li>
+            <li class="list-inline-item">
+                <a href="#" style="color: white">Privacy Policy</a>
+            </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+                <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                <i class="fa fa-facebook-square fa-2x"></i>
+                </a>
+            </li>
+            <li class="list-inline-item mr-3">
+                <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                <i class="fa fa-twitter-square fa-2x"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://www.instagram.com/centennial_park/?hl=en" style="color: white">
+                <i class="fa fa-instagram fa-2x"></i>
+                </a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+body {
+  font-family: "HelveticaNeue-Light";
+  background-color: #FFFFFF;
+}
+</style>
+</html>
+    

@@ -1,0 +1,67 @@
+,Original,New
+0,Game (GAM),GAM
+1,Film Shoot (FILM),FILM
+2,Band Competition (BCOMP),COMP
+3,Competition (COMP),COMP
+4,Job Fair/Career Expo (JFCE),JF
+5,Family Reunion (FAM),FAM
+6,Interviews (ITVW),INVW
+7,Internal (INT),INT
+8,Awards Ceremony (AWC),AWC
+9,Team Building (TB),TB
+10,Broadcasting (BRO),BRO
+11,Conference & Expo (Corp) (CEC),CONF
+12,Conference & Expo (Assoc) (CEA),CONF
+13,Conference (No  Expo) (Assoc) (CWOA),CONF
+14,Conference (CONF),CONF
+15,Conference (No Expo) (Corp) (CWOC),CONF
+16,Market Place (MPL),MKT
+17,Promotional Event (PROMO),PROMO
+18,Festival (FEST),FEST
+19,Banquet/Reception (BANQ),REC
+20,Reception (REC),REC
+21,Gala Dinner (GD),ME
+22,Brunch (BRU),ME
+23,Breakfast (BRE),ME
+24,Picnic (PIC),ME
+25,Dinner (DIN),ME
+26,Luncheon (LUN),ME
+27,Parade (PAR),PAR
+28,Amusement Park (AMUP),PRK
+29,Rehearsal (RHR),RHR
+30,Convention (No Exhibits) (CONV),CONV
+31,Convention/Tradeshow - Assoc. (CONVA),CONV
+32,Convention/Tradeshow - Corp. (CONVC),CONV
+33,Affiliate/Parking (AFP),P
+34,Parking at MY (PMY),P
+35,Fashion Show (FSH),FS
+36,Sporting Event w/Exhibits (SPORT),SPORT
+37,Fitness Event (FIT),SPORT
+38,Race (RCE),SPORT
+39,"Punt, Pass & Kick (PPK)",SPORT
+40,Exhibition (EXH),EXH
+41,Trade Show (TS),TS
+42,Training Session (TRAI),TRAI
+43,Planning Meeting (PM),MEET
+44,Meeting (MEET),MEET
+45,Meeting (Corp) (MC),MEET
+46,Meeting (Assoc) (MA),MEET
+47,Party (PRTY),PRTY
+48,Fan-Fest/Tailgate Party (FFTP),PRTY
+49,Holiday Party (HOP),PRTY
+50,Video/Photo Shoot (VPS),VID
+51,Entertainment/Concert (ENT),CON
+52,Concert (CON),CON
+53,Other (OTH),OTH
+54,Wedding (WED),WED
+55,Affiliate/Exhibitor (AFX),AFX
+56,Charitable Run/Walk (CRW),CHRTY
+57,Charity Event (CHRTY),CHRTY
+58,Team Practice (TP),PR
+59,Cheerleaders Practice (CP),PR
+60,Band Practice (BPR),PR
+61,Orientation (ORI),ORI
+62,Co-Produced Event (COPR),CO
+63,Contractor Move-In/Move Oute (INTC),CONT
+64,Public/Consumer Event (PUB),PUB
+65,Graduation (GRAD),GRAD

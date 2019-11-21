@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap.3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="static/jss/input-page.js"></script>
+</head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #143055!important;
+        background-color: white !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+
+    div.background {
+        background: url('/static/bgtest2.jpg');
+        background-size: cover;
+        border: 0.5px solid #143055;
+        opacity: 1;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 2px solid #143055;
+        opacity: 1;
+    }
+    div.transbox p {
+        margin: 10%;
+        font-weight: bold;
+        color: #143055;
+    }
+    .font-weight-normal {
+        font-weight: 400!important;
+    }
+    .text-center {
+        text-align: center!important;
+    }
+    .text-muted {
+        color: #6c757d!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    .mb-0, .my-0 {
+        margin-bottom: 0!important;
+    }
+    .mt-0, .my-0 {
+        margin-top: 0!important;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem! important;
+    }
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem! important;
+    }
+    h1 {
+        color: #143055;
+        font-size: 80px;
+        font-weight: inherit;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 0.1em;
+    }
+    h2 {
+        color: #143055
+    }
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px
+    }
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        word-wrap: break-word;
+        background-color: white;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+            border-top-color: rgba(0, 0, 0, 0.125);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.125);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-bottom-color: rgba(0, 0, 0, 0.125);
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-left-color: rgba(0, 0, 0, 0.125);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+        border-radius: .25rem;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+    }
+    .card-deck {
+        display: flex;
+        min-width: 220px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .card {
+        border-radius: 10px;
+        background-color: white;
+    }
+    .card-header {
+        padding: 1.25rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.3s;
+        margin: 30px;
+        background-color: white;
+        border-radius: 10px
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    }
+    small {
+        color: #999999;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: smaller;
+        display: inline-block;
+    }
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+    }
+    .col-lg-5 {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
+    .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+    }
+    .mb-auto, .my-auto {
+        margin-bottom: auto!important;
+        margin-top: auto!important
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+
+    footer.footer {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .bg-dark {
+        background-color: #143055!important;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .text-muted {
+    color: lightblue!important;
+    }
+    .mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .table {
+        width: 90%;
+        position: relative;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+
+}
+/* Popup box END */
+
+/*Contact Dropdown*/
+.dropdown {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top:50px;
+    right:110px;
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-family: HelveticaNeue-Light;
+    color: #143055;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+td:nth-child(2) {
+    width: 525px;
+    min-width: 525px;
+    max-width: 525px;
+}
+
+.button2 {
+    background-color: white; 
+    color: #143055; 
+    border: 2px solid #143055;
+    padding: 6px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+</style>
+
+
+<script type="text/javascript">
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+</script>
+</head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                <li class="active"><a style="color: white" href="http://127.0.0.1:5000/search-page"><i class="fa fa-fw fa-search"></i> Search Events</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                <li><a href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+<li><a style="color: white" class="trigger_popup_fricc"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+        </div>
+    </div>
+</nav>
+<body>
+<br>
+<div class="container">
+    <div class="col">
+    <div class="card-deck md-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h3 class="my-0 font-weight-normal" style="color: #143055">Search by Event ID</h3>
+            </div>
+            <div class="card-body">
+                <div class="input-group">
+                    <input type="text" id="searchEvent" name="searchEvent" class="form-control" placeholder="eg. 123456">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" id="submitEvent">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-deck md-3">
+        <div class="card mb-4 box-shadow">
+            <div class="row">
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <th scope="col">Event ID</th>
+                    <th id="eventIdOutput" scope="row">123456</th>
+                </tr>
+                <tr>
+                    <th scope="col">Event Name</th>
+                    <td id="eventNameOutput">Super Bowl Fan Festival</td>
+                </tr>
+                <tr>
+                    <th scope="col">Event Type</th>
+                    <td id="eventTypeOutput">Game</td>
+                </tr>
+                <tr>
+                    <th scope="col">Event Start Date</th>
+                    <td id="eventStartOutput">01/08/2018</td>
+                </tr>
+                <tr>
+                    <th scope="col">Event End Date</th>
+                    <td id="eventEndOutput">01/10/2018</td>
+                </tr>
+                <tr>
+                    <th scope="col">Expected Attendance</th>
+                    <td id="eventAttendanceOutput">1000</td>
+                </tr>
+                <tr>
+                    <th scope="col">SQFT Required</th>
+                    <td id="eventSqftOutput">278000</td>
+                </tr>
+                <tr>
+                    <th scope="col">Total Room Nights</th>
+                    <td id="eventRoomNightsOutput">200</td>
+                </tr>
+                <tr>
+                    <th scope="col">RFP Submission Date</th>
+                    <td id="eventSubOutput">01/01/2018</td>
+                </tr>
+                <tr>
+                    <th scope="col">Room suggestion</th>
+                    <td id="eventRoomsOutput">Exhibit Hall A1, Exhibit Hall A2</td>
+                </tr>
+                <tr>
+                    <th scope="col">Cost Prediction</th>
+                    <td id="eventCostOutput">[87000, 97000]</td>
+                </tr>
+                <tr>
+                    <th scope="col">Baseline Price</th>
+                    <th id="eventBaselineOutput">100000</th>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <button class="button button2" style="margin-bottom: 20px" id="removeButton"> Remove</button>
+        </div>
+    </div>
+</body>
+<footer class="footer bg-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 h-100 text-center my-auto">
+                <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Terms of Use</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Privacy Policy</a>
+                </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                    <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                    <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/centennial_park/?hl=en"style="color: white">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+</footer>
+<style>
+    body {
+    font-family: "HelveticaNeue-Light";
+    color:#143055;
+    background: url("/static/blurred6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<script>
+    $(function(){
+        $('#removeButton').click(function(){
+            var eventId = $('#eventIdOutput').text();
+            $.ajax({
+                url: '/remove',
+                data: {eventId: eventId},
+                type: 'POST',
+                success:function(response){
+                    var fieldArr = ["eventIdOutput", "eventNameOutput",
+                                    "eventTypeOutput", "eventStartOutput",
+                                    "eventStartOutput", "eventEndOutput", 
+                                    "eventAttendanceOutput", "eventSqftOutput",
+                                    "eventRoomNightsOutput", "eventSubOutput", 
+                                    "eventRoomsOutput", "eventCostOutput",
+                                    "eventBaselineOutput"]
+                    for(i=0; i<fieldArr.length; i++){
+                        document.getElementById(fieldArr[i]).innerText = "";
+                    }
+                }
+            })
+        })
+    })
+    
+    $(function(){
+        $('#submitEvent').click(function(){
+            var eventId = $('#searchEvent').val();
+            $.ajax({
+                //Uses testapp.py to check if login credentials are satisfied
+                url: '/search',
+                data: {eventId: eventId},
+                type: 'POST',
+                success:function(response){
+                    if(JSON.parse(response).status=="pass"){
+                        eventInfo = JSON.parse(response).eventInfo
+                        console.log(eventInfo)
+                        document.getElementById("eventIdOutput").innerText = eventInfo.eventID;
+                        document.getElementById("eventNameOutput").innerText = eventInfo.name;
+                        document.getElementById("eventTypeOutput").innerText = eventInfo.type;
+                        var start = new Date(Math.round((eventInfo.startDate - 25569)*86400*1000));
+                        start.setHours(start.getHours()+5);
+                        document.getElementById("eventStartOutput").innerText = start.toLocaleDateString("en-US");
+                        var end = new Date(Math.round((eventInfo.endDate - 25569)*86400*1000));
+                        end.setHours(end.getHours()+5);
+                        document.getElementById("eventEndOutput").innerText = end.toLocaleDateString("en-US");
+                        document.getElementById("eventAttendanceOutput").innerText = eventInfo.attendance;
+                        document.getElementById("eventSqftOutput").innerText = eventInfo.sqft;
+                        document.getElementById("eventRoomNightsOutput").innerText = eventInfo.roomNights;
+                        var sub = new Date(Math.round((eventInfo.subDate - 25569)*86400*1000));
+                        sub.setHours(sub.getHours()+5);
+                        document.getElementById("eventSubOutput").innerText = sub.toLocaleDateString("en-US");
+                        var roomsBooked = eventInfo.rooms.replace(/'/g,'').replace("[", "").replace("]", "").split(",")
+                        var roomBuilder = ""
+                        for(i=0; i<roomsBooked.length; i++){
+                            if(i==roomsBooked.length-1){
+                                roomBuilder = roomBuilder + roomsBooked[i].trim()
+                            }else if(i!=0 & (i+1)%2==0){
+                                roomBuilder = roomBuilder + roomsBooked[i].trim() + ",\n";
+                            } else {
+                                roomBuilder = roomBuilder + roomsBooked[i].trim() + ", ";
+                            }
+                        }
+                        if(eventInfo.cost!=null){
+                            eventInfo.cost = "$" + eventInfo.cost.toFixed(2);
+                        }
+                        if(eventInfo.baselinePrice!=null){
+                            eventInfo.baselinePrice = "$" + eventInfo.baselinePrice.toFixed(2);
+                        }
+                        document.getElementById("eventRoomsOutput").innerText = roomBuilder;
+                        document.getElementById("eventCostOutput").innerText = eventInfo.cost;
+                        document.getElementById("eventBaselineOutput").innerText = eventInfo.baselinePrice;
+                    } else {
+                        alert("No such event. Please reenter another Event ID.")
+                    }
+                    
+
+                }
+            })
+        })
+    })
+</script>
+</html>

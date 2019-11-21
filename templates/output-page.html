@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css"> 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="static/jss/d3-tip.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    /* .header{
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        color:#26a1a1;
+        position:relative;
+        top:-50;
+        left:300;
+        font-size: 30px;
+    }  */
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: white!important;
+        background-color: #143055 !important;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+    
+    table, th, td {
+        border: 1px solid black;
+        font-family: 'Times New Roman';
+        font-size: 40px;
+        width: 60px;
+        color: white;
+        background-color: white;
+        align: center;
+        position: relative;
+        top: 0px;
+        
+        }
+    /* body {
+        background: url('/Users/Yvonne/Documents/GitHub/front-end/static/GWCC_Aerial_View.png') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        } */            
+    div.background {
+        background: url('/static/bgtest2.jpg');
+        background-size: cover;
+        border: 0.5px solid #143055;
+        opacity: 1;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 2px solid #143055;
+        opacity: 1;
+    }
+
+    div.transbox p {
+        margin: 10%;
+        font-weight: bold;
+        color: #143055;
+    }
+    .font-weight-normal {
+        font-weight: 400!important;
+    }
+
+    .text-center {
+        text-align: center!important;
+    }
+
+    .text-muted {
+        color: #6c757d!important;
+    }
+
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+
+    .mb-0, .my-0 {
+        margin-bottom: 0!important;
+    }
+    .mt-0, .my-0 {
+        margin-top: 0!important;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem! important;
+    }
+
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem! important;
+    }
+
+    h1 {
+        color: #143055;
+        font-size: 80px;
+        font-weight: inherit;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 0.1em;
+    }
+    h2 {
+        color: #143055;
+    }
+    h3 {
+        color: #143055;
+        font-size: 20px;
+    }
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px
+    }
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+    #secondCard{
+        height:325px;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        word-wrap: break-word;
+        background-color: white;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+            border-top-color: rgba(0, 0, 0, 0.125);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.125);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-bottom-color: rgba(0, 0, 0, 0.125);
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-left-color: rgba(0, 0, 0, 0.125);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
+        border-radius: .25rem;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+    }
+    .card-deck {
+        display: flex;
+        min-width: 220px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .card-header {
+        padding: 1.25rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    }
+
+    small {
+        color: #999999;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: smaller;
+        display: inline-block;
+    }
+
+    ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .vl {
+        border-left: 6px solid gray;
+        height: 10px;
+    }
+    .col-lg-5 {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
+    .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+    }
+    .mb-auto, .my-auto {
+        margin-bottom: auto!important;
+        margin-top: auto!important
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    
+    footer.footer {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .bg-dark {
+        background-color: #143055!important;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .text-muted {
+    color: lightblue!important;
+    }
+    .mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+
+
+#marginViz{
+    position:relative;
+    left: 550px;
+    top: -285px;
+    width: 600px;
+    height: 275px;
+}
+.axis path, 
+    .axis line{
+        fill: none;
+        stroke: #143055;
+        stroke-width: 1px;
+    }
+.tick line{
+    opacity: 0.5;
+    stroke-width: 1px;
+}  
+.axis text{
+    fill:#143055;
+}  
+.axesText{
+    font-family: "HelveticaNeue-Light";
+    font-size: 13px;
+    fill: #143055;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+
+}
+/* Popup box END */
+
+/*Contact Dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:50px;
+  right:110px;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: HelveticaNeue-Light;
+  color: #143055;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+<script type="text/javascript">
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+</script>
+</head>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                <li><a style="color: white" href="http://127.0.0.1:5000/search-page"><i class="fa fa-fw fa-search"></i> Search Events</a></li>
+                <!-- <li class="dropdown"><a style="color: white" href="#" class="dropdown-toggle" 
+                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-tags"></i> Functionality
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                <li><a href="http://127.0.0.1:5000/room-page"> Room Selection</a></li>
+                <li class="active" style="color: #143055"><a href="http://127.0.0.1:5000/output-page"> Pricing</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="http://127.0.0.1:5000/output-page">Overall Results</a></li>
+                    </ul>
+                </li> -->
+            </ul>
+            <!-- <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-primary"> Submit</button>
+            </form> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                <li><a href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+                
+                <li><a style="color: white" class="trigger_popup_fricc"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<body>
+<div class="background">
+    <div class="transbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mt-4 mb-3" style="color: #143055">Dynamic Pricing Tool 
+                        <small id="eventName">Super Bowl Fan Festival</small>
+                    </h2>  
+                    
+                </div>
+                <div class="col-lg-6" style="text-align: right; margin-right">
+                    <h3 style="margin-right: 10px;"><i class="fa fa-fw fa-tags" style="display: inline-block;"></i>
+                        <span id="eventID"> Event ID: 123456</span></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-4 box-shadow text-center">
+                        <div class="card-header" style="color: #143055">
+                            <h4 class="my-0 font-weight-normal" style="color: #143055">Cost Prediction</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+                                    <h1 id="lowerBound" style="color: #143055">$ 87,000</h1>
+                                        <small style="font-size: 20px">Lower Bound</small>
+                                </div>
+                                <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+                                    <h1 id="upperBound" style="color: #143055">$ 97,000</h1>
+                                        <small style="font-size: 20px">Upper Bound</small>
+                                </div> 
+                            </div>     
+                        </div>                
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-4 box-shadow text-center">
+                        <div class="card-header" style="color: #143055">
+                            <h4 class="my-0 font-weight-normal" style="color: #143055">Dynamic Pricing Tool</h4>
+                        </div>
+                        <div class="card-body" id="secondCard">
+                            <div class="row text-center">
+                                <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+                                    <h1 id="baseline" style="color: #143055">$ 100,000</h1>
+                                        <small style="font-size: 20px">Baseline Price</small>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+                                    <h1 id="margin" style="color: #143055">18.01 %</h1>
+                                        <small style="font-size: 20px">Suggested Profit Margin</small>
+                                </div>  
+                            </div>   
+                            <div id="marginViz"></div>  
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          
+<br>
+<br/>
+<footer class="footer bg-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 h-100 text-center my-auto">
+                <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Terms of Use</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Privacy Policy</a>
+                </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                    <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                    <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/centennial_park/?hl=en" style="color: white">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+</footer>
+</div>
+</body>  
+
+</html>
+<script>
+    var cost = JSON.parse({{cost|tojson}}.replace(/'/g, '"'));
+    var margin = JSON.parse({{margin|tojson}}.replace(/'/g, '"'));
+    var eventID = JSON.parse({{eventID|tojson}}.replace(/'/g, '"'));
+    var marginList = {{marginList|safe}}
+    var marginListFinal = []
+    for(i=0; i<marginList.length; i++){
+        if(marginList[i]>0.15){
+            marginListFinal.push(marginList[i])
+        }
+    }
+
+    var baseline = cost*(1+margin)
+    document.getElementById("lowerBound").innerText = "$ "+numberWithCommas(Math.round(cost*0.925));
+    document.getElementById("upperBound").innerText = "$ "+numberWithCommas(Math.round(cost*1.075));
+    document.getElementById("margin").innerText = (margin*100).toFixed(2)+" %";
+    document.getElementById("baseline").innerText = "$ " + numberWithCommas(Math.round(baseline))
+    document.getElementById("eventName").innerText = {{eventName|tojson}}
+    document.getElementById("eventID").innerText = "Event ID: "+eventID
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    var margin = {top:20, bottom:20, left:20, right:20},
+        width = 550-margin.left-margin.right,
+        height = 275-margin.top-margin.bottom, 
+        c = 50;
+    var svg = d3.select("#marginViz")
+                .append("svg")
+                    .attr("width", 650)
+                    .attr("height", 350)
+                    .attr("id", "svg");
+    
+    var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d, i) {
+                    cumVal = 0;
+                    ind = i;
+                    upperMargin = d.x1
+                    d3.selectAll('rect').each(function(d, i){
+                        if(i<=ind){
+                            cumVal = cumVal + d.length/marginList.length
+                        }
+                    });
+                    return "<strong>Proportion under " + (100*upperMargin).toFixed(2) +"%" + ":</strong> <span style='color:red'>" + (100*cumVal).toFixed(2) + "%" + "</span>";
+                });
+
+    svg.call(tip);
+
+    var xScale = d3.scaleLinear()
+                        .domain([0.16, 0.205])
+                        .range([0, width-margin.left*3])
+
+    var histogram = d3.histogram()
+      .value(function(d) { return d; })   // I need to give the vector of value
+      .domain(xScale.domain())  // then the domain of the graphic
+      .thresholds(xScale.ticks(10)); // then the numbers of bins
+
+  // And apply this function to data to get the bins
+    var bins = histogram(marginList);     
+    
+    var yScale = d3.scaleLinear()
+      .range([height, margin.top]);
+
+    yScale.domain([0, d3.max(bins, function(d) { return d.length/marginList.length; })]);
+
+    
+    
+    svg.append("g")
+                .attr("class", "axis")
+                .attr("transform", "translate(" + (2*margin.left+50) + "," + (height) + ")")
+            .call(d3.axisBottom(xScale)
+                    .tickFormat(function(d){return (100*d).toFixed(1);}))
+            .selectAll("text")
+                .attr("transform", "translate(15, 15) rotate(90)")
+                .attr("class", "axesText")
+                .style("text-anchor", "start");
+
+    svg.append("g")
+                .attr("class", "axis")
+                .attr("transform", "translate(" + (2*margin.left+50) + "," + 0 + ")")
+                .call(d3.axisLeft(yScale)
+                        .ticks(5)
+                        .tickFormat(function(d){return (100*d).toFixed(1);}))
+                .selectAll("text")
+                    .attr("class", "axesText");
+    console.log(bins)
+    svg.selectAll("rect")
+      .data(bins)
+      .enter()
+      .append("rect")
+        .attr("x", 1)
+        .attr("transform", function(d) {return "translate(" + (50+2*margin.left+xScale(d.x0)) + "," + yScale(d.length/marginList.length) + ")"; })
+        .attr("width", function(d) { return xScale(d.x1) - xScale(d.x0) -1 ; })
+        .attr("height", function(d) { return height - yScale(d.length/marginList.length); })
+        .attr("id", function(d, i){ return "bar"+i;})
+        .style("fill", "#187bcd") //CHANGE IT HERE YVONNE IF U WANNA 
+        .attr("value", function(d){return d.length/marginList.length;})
+        .on('mouseover', changeFill)
+        .on('mouseout', reset)
+        .on('click', changeMargin);
+    
+    svg.append("text")
+        .attr("class", "axesText")
+        .attr("x", 290)
+        .attr("y", 300)
+        .text("Profit Margins (%)")
+    
+    svg.append("text")
+        .attr("class", "axesText")
+        .attr("x", -175)
+        .attr("y", 35)
+        .attr("transform", "rotate(-90)")
+        .text("Percent of Events (%)")
+    
+    function changeMargin(d, i){
+        var marginMedian = (d.x0+d.x1)/2;
+        var baseline = cost*(1+marginMedian)
+        document.getElementById("margin").innerText = (marginMedian*100).toFixed(2)+" %";
+        document.getElementById("baseline").innerText = "$ " + numberWithCommas(Math.round(baseline))
+    }
+
+    function changeFill(d, i){ 
+        for(ind=0; ind<=i; ind++){
+            d3.select("#bar"+ind)
+                .attr("opacity", 0.5)
+        }
+        tip.show(d, i);
+    }
+    function reset(d, i){
+        for(ind=0; ind<=i; ind++){
+            d3.select("#bar"+ind)
+                .attr("opacity", 1)
+        }
+        tip.hide(d, i);
+    }
+    </script>
+<style>
+        body {
+            font-family: "HelveticaNeue-Light";
+            color:#143055;
+            background-color: #FFFFFF;
+        }
+        </style>

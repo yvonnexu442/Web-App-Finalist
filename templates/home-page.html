@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="style.css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/components/carousel/">
+    <link href="css/landing-page.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+.header{
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    color:#26a1a1;
+    position:relative;
+    top:-50;
+    left:300;
+    font-size: 30px;
+} 
+img {
+  opacity: 0.9;
+}
+.navbar {
+    margin-bottom: 0px;
+    background-color: #143055;
+    width: 100%;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #143055!important;
+    background-color: white !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: #143055;
+    color: rgb(255, 255, 255)
+}
+.navbar-toggle:hover {
+    background: white !important;
+    color: #143055 !important;
+}
+.navbar-toggle:focus {
+    background: white !important;
+    color: #143055 !important;
+}
+table, th, td {
+    border: 1px solid black;
+    font-family: 'Times New Roman';
+    font-size: 40px;
+    width: 60px;
+    color: white;
+    background-color: white;
+    align: center;
+    position: relative;
+    top: 0px;  
+}
+.text-muted {
+    color: lightblue!important;
+}
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+.small, small {
+    font-size: 80%;
+    font-weight: 400;
+}
+.mb-2, .my-2 {
+    margin-bottom: .5rem!important;
+}
+.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: .5rem;
+}
+.mb-auto, .my-auto {
+    margin-bottom: auto!important;
+    margin-top: auto!important
+}
+.h-100 {
+    height: 100%!important;
+}
+.features-icons {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+.text-center {
+    text-align: center!important;
+}
+.lead {
+    display: block;
+    color: grey;
+    font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.mb-0, .my-0 {
+    margin-bottom: 20px!important;
+}
+h1 {
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-variant-position: super;
+    margin-bottom: 0.8em;
+    margin-top:0.6em
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+h2:hover{
+    color: #0bbcf7;
+    font-size: 220%
+}
+p {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  /* font-style: italic; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+footer.footer {
+    display: block;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.bg-dark {
+    background-color: #143055!important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    cursor: pointer;
+
+}
+/* Popup box END */
+
+/*Contact Dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:50px;
+  right:110px;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: HelveticaNeue-Light;
+  color: #143055;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+</style>
+
+<script type="text/javascript">
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+
+</script>
+
+
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <!-- <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown" 
+                    role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-question"></i> Help
+                    <span class="caret"></span>   
+                    </a> -->
+                    <!-- <ul class="dropdown-menu"> -->
+                        <!-- <li><a href="#">Package Required</a></li>
+                        <li><a href="#">Data Required</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Room Selection Manual</a></li>
+                        <li><a href="#">Pricing Manual</a></li> -->
+                    <!-- </ul> -->
+                <!-- </li> -->
+                <li><a href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                <li><a href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+
+                <li><a style="color: white" class="trigger_popup_fricc"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src='/static/opt_front.jpg' 
+                            alt="First slide" style="width: 1200px;">
+                            <div class="carousel-caption text-left">
+                                <h1>Room Allocation Tool</h1>
+                                <p>The Room Allocation Tool takes room requirement information as well as 
+                                   additional requests and returns the lowest cost room combinations. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                                <img src='/static/prediction_front.jpg' 
+                                alt="Second slide" style="width: 1200px;">
+                            <div class="carousel-caption">
+                                    <h1>Cost Prediction Tool</h1>
+                                    <p>The Cost Prediction Tool takes in RFP feature inputs and returns the
+                                        predicted expense on an event-base level.
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/static/pmf_front.jpg" 
+                            alt="Third slide" style="width: 1200px">
+                            <div class="carousel-caption">
+                                <h1>Classification Tool</h1>
+                                <p>The Classification Tool gives estimated baseline price results considering 
+                                    both time of year and type of event.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
+                            href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                        </span></a>
+                </div>
+            </div>
+        </div>
+</div>
+<p class="lead mb-0"></p>
+<h1 align="center">Welcome!</h1>
+
+<hr/>
+<section class="text-center my-5">
+        <div class="row">     
+          <div class="col-md-4">     
+            <i class="fa fa-mouse-pointer fa-4x"></i>
+            <h2>Create Events</h2>
+            <p class="lead mb-0"> Input event related information into the database in order 
+            to view the results of the three models.
+            </p>
+            <div class="text-center">
+                <a class="btn btn-primary" onclick="location.href='/main-page'">
+                Select <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-md-4">      
+            <i class="fa fa-fw fa-search fa-4x"></i>
+            <h2>Search Events</h2>
+            <p class="lead mb-0">Search by event ID in order to get a detailed cost prediction, room selection, and 
+               profit information.
+            </p>
+            <div class="text-center">
+                    <a class="btn btn-primary" onclick="location.href='/search-page'">
+                    Select <i class="fa fa-angle-right"></i></a>
+                </div>
+          </div>
+          <div class="col-md-4">
+            <i class="fa fa-calendar-o fa-4x"></i>
+            <h2>View Calendar</h2>
+            <p class="lead mb-0">View Google calendar of upcoming GWCC events in order to see what events
+            are booked for a given day. 
+            </p>
+            <div class="text-center">
+                    <a class="btn btn-primary" onClick="location.href='/calendar-page'">
+                    Select <i class="fa fa-angle-right"></i></a>
+                </div>
+          </div>
+        </div>
+</section>
+
+<br>
+<br/>
+<footer class="footer bg-dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 h-100 text-center my-auto">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                  <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="#" style="color: white">Terms of Use</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                  <a href="#" style="color: white">Privacy Policy</a>
+                </li>
+              </ul>
+              <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                  <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                  <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/centennial_park/?hl=en" style="color: white">
+                    <i class="fa fa-instagram fa-2x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+</footer>
+<style>
+    body {
+        font-family:"HelveticaNeue-Light";
+        color:#143055;
+        background-color: #FFFFFF;
+    }
+</html>

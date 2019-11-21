@@ -1,0 +1,106 @@
+#logoImg{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    bottom: 300px;
+    top: 120px;
+    left: -270px;
+    display: block;
+    margin: 0 auto;
+    }
+#logoImg2{
+    height:100px;
+    position: relative;
+    top:-50px;
+}
+#description{
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+}
+#showButton{
+    position: absolute;
+    top: 10px;
+    left: 400px;
+    display: flex;
+    z-index: 2;
+}
+body{
+    background-color: #143055;
+}
+.loginForm{
+    position: relative;
+    top: -40px;
+}
+.formInput{
+    background-color: #143055;
+    border-color: #143055;
+    height: 100px;
+    position: relative;
+    left: 30px;
+    top: -10px;
+    transform: translate(-5%,50%);
+}
+#empId{
+    font-family: "Source Sans Pro";
+}
+#password{
+    font-family: "Source Sans Pro";
+}
+#login{
+    width: 435px;
+    position: relative;
+    left: 60px;
+
+    font-family: "Source Sans Pro";*/
+    /*font-family: "monospace";*/
+    font-size: 16px;
+    font-weight: 600 (semibold);
+    line-height: 18px;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: black;
+    padding: 11px 35px;
+    background-color: #A2D9E7;
+    border-radius: 25px;
+}
+#submit{
+    width: 435px;
+    position: relative;
+    left: 60px;
+
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-weight: 600 (semibold);
+    line-height: 18px;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 11px 35px;
+    background-color: #A2D9E7;
+    border-radius: 25px;
+}
+.title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300 (Light);
+    font-size: 24px;
+    line-height: 1.25em/30px;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 300px;
+}
+#confirm{
+    color: white;
+}
+.top-buffer { margin-top: 150px; color: #143055;}
+.header{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300 (Light);
+    font-size: 24px;
+    line-height: 1.25em/30px;
+    color: #143055;
+    position: relative;
+    top: 100px;
+    left: 300px;
+}

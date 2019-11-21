@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet"/> -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js">\x3C/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    
+</head>
+    <style>
+        #rooms{
+            width: 435px;
+            position: relative;
+            top:100px;
+            left: 375px;
+            font-family: "Source Sans Pro";
+            font-size: 16px;
+            font-weight: 600 (semibold);
+            line-height: 18px;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
+            color: black;
+            padding: 11px 35px;
+            background-color: #A2D9E7;
+            border-radius: 25px;
+        }
+
+        #export{
+            width: 220px;
+            position: relative;
+            top:30px;
+            align: center;
+            font-family: "Source Sans Pro";
+            font-size: 16px;
+            font-weight: 600 (semibold);
+            line-height: 18px;
+            letter-spacing: 0.9px;
+            text-transform: uppercase;
+            color: black;
+            padding: 11px 35px;
+            background-color: #A2D9E7;
+            border-radius: 25px;
+        }
+        btn btn-primary{
+            margin-right: 10px
+        }
+        .header{
+            font-family: "Source Sans Pro";
+            font-weight: 600;
+            color:#26a1a1;
+            position:relative;
+            top:-50;
+            left:300;
+            font-size: 30px;
+        } 
+        .navbar {background-color: #143055}
+        table, th, td {
+            border: 1px solid black;
+            font-family: "Times New Roman";
+            font-size: 30px;
+            color: white;
+            background-color: white;
+            align: center;
+            position: relative;
+            top: 0px;
+            }
+        /* body {
+            background: url('/Users/Yvonne/Documents/GitHub/front-end/static/GWCC_Aerial_View.png') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            } */            
+            div.background {
+            background: url('/Users/Yvonne/Documents/GitHub/front-end/static/bgtest2.jpg') repeat;
+            background-size: cover;
+            border: 2px solid #143055;
+            opacity: 1;
+            }
+
+            div.transbox {
+            margin: 30px;
+            background-color: #ffffff;
+            border: 2px solid #143055;
+            opacity: 1;
+            }
+
+            div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #143055;
+            }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" href="#">Georgia World Congress Center</a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li><a style="color: white" href="#">Home</i></a></li>
+                      <li><a style="color: white" href="#">Event Information</a></li>
+                      <li class="dropdown">
+                        <a style="color: white" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                        aria-haspopup="true" aria-expanded="false">Functionality
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Room Selection</a></li>
+                          <li class="active"><a href="#">Pricing</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Overall Results</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Search">
+                           </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </form>
+      
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                          
+                            <a href="#" style="color: white" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" aria-expanded="false">Help</i>
+                            <span class="caret"></span>   
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Package Required</a></li>
+                                <li><a href="#">Data Required</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Room Selection Manual</a></li>
+                                <li><a href="#">Pricing Manual</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" style="color: white">Logout</a></li>
+                    </ul>
+                    
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+
+<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class = "navbar-brand" href="#" style="color: white">GWCCA</a>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="main-page" style="color: white">Login</a></li>
+                <li><a href="main-page" style="color: white">Event Information</a></li>
+                <li><a href="room-page" style="color: white">Room Allocation</a></li>
+                <li><a href="calendar-page" style="color: white">Calendar</a></li>
+                <li><a href="output-page" style="color: white">Output</a></li>
+                <li><a href="/" style="color: white">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<div class="background">
+    <div class="transbox">
+        <div class="container">
+            <h1 class="mt-4 mb-3">Baseline Price 
+            <small>Cost Prediction & Profit Margin Cluster</small>
+            </h1>    
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="room-page">Functionality</a>
+                </li>
+                <li class="breadcrumb-item active">Pricing</li>
+            </ol>
+            <div class="card mb-4">
+                <h4 class="card-header">Search</h4>
+                    <div class="card-body">
+                        <div class="input-group">
+                        <!-- <span class="fa fa-search form-control-feedback"></span> -->
+                        <input type="text" class="form-control" placeholder="Event ID/Name...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" onclick="http://127.0.0.1:5000/main-page">Go</button>
+                        </span>
+                        </div>
+                    </div>
+            </div>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <h4 class="card-header">Cost Prediction</h4>
+                            <div class="card-body">
+                                <h1 class="text-center">$87,000</h1>
+                            </div>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4 class="mb-1">Expected Attendance
+                                            <div class="text-center"><p class="mb-2">7,890
+                                            <small>people</small></p></div>
+                                        </h4>
+                                    </div>
+                                    <small class="text-muted">Click to edit</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4 class="mb-1">Event Length
+                                            <div class="text-center"><p class="mb-2">8   
+                                            <small>days</small></p></div>
+                                        </h4>
+                                    </div>
+                                    <small class="text-muted">Click to edit</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h4 class="mb-1">SQFT Requested
+                                            <div class="text-center"><p class="mb-2">98,000    
+                                             <small>SQFT</small></p></div>
+                                        </h4>
+                                    </div>
+                                    <small class="text-muted">Click to edit</small>
+                                </a>
+                            </div>
+                    </div>
+                </div>
+                        
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100">
+                            <h4 class="card-header">Baseline Price</h4>
+                                <div class="card-body">
+                                <h1 class="text-center">$100,000</h1>
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Event Type
+                                                <div class="text-center"><p class="mb-2">Conference
+                                                <small>Technology</small></p></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Demand Result
+                                                <div class="text-center"><p class="mb-2">Peak   
+                                                <small>Season</small></p></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h4 class="mb-1">Suggested Margin
+                                                <div class="text-center"><p class="mb-2">18.87   
+                                                <small>%</small></p></div>
+                                            </h4>
+                                        </div>
+                                        <small class="text-muted">Click to edit</small>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>   
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xs-4">
+                    <a class="btn btn-primary" onclick="location.href='http://127.0.0.1:5000/output-page'">Export to PDF</a>
+                </div>
+                <div class="col-xs-4">
+                    <a class="btn btn-primary" onclick="location.href='http://127.0.0.1:5000/main-page'">Export to Excel</a>
+                </div>
+            </div>
+            <div style="height: 30px"></div>
+        </div>
+    </div>
+</div>
+                
+                
+<!-- <script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/chart.js/lineChart.js"></script> -->
+</body>
+</html>

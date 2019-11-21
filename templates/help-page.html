@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .navbar {
+        margin-bottom: 0px;
+        background-color: #143055;
+        width: 100%;
+    }
+
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+        color: #142055!important;
+        background-color: white !important;
+    }
+    .navbar-default{
+        height:52px;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #143055;
+        color: rgb(255, 255, 255)
+    }
+    .navbar-toggle:hover {
+        background: white !important;
+        color: #143055 !important;
+    }
+    .navbar-toggle:focus {
+        background: white !important;
+        color: #143055 !important;
+    }
+    div.background {
+        background: url('/static/bgtest2.jpg');
+        background-size: cover;
+        border: 0.5px solid #143055;
+        opacity: 1;
+    }
+    div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 2px solid #143055;
+        opacity: 1;
+    }
+    div.transbox p {
+        margin: 10%;
+        font-weight: bold;
+        color: #143055;
+    }
+    .font-weight-normal {
+        font-weight: 400!important;
+    }
+    .text-center {
+        text-align: center!important;
+    }
+    .text-left {
+        text-align: left!important;
+        margin-left: 80px;
+    }
+
+    .text-left-title {
+        text-align: left;
+        margin-left: 0px;
+    }
+    .text-muted {
+        color: #6c757d!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    .mb-0, .my-0 {
+        margin-bottom: 0!important;
+    }
+    .mt-0, .my-0 {
+        margin-top: 0!important;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem! important;
+    }
+    .mb-4, .my-4 {
+        margin-bottom: 1.5rem! important;
+    }
+    h1 {
+        color: #143055;
+        font-size: 80px;
+        font-weight: inherit;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 0.1em;
+    }
+    h2 {
+        color: #143055;
+        font-weight: bold;
+    }
+    h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px
+    }
+    h3 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        margin-left: 30px;
+    }
+    .h4, h4 {
+        font-size: 1.5rem;
+    }
+    p {
+        margin-left: 20px;
+        margin-right: 20px;
+        text-indent: 50px;
+    }
+    .card {
+        position: relative;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        word-wrap: break-word;
+        background-color: white;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+            border-top-color: rgba(0, 0, 0, 0.125);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.125);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-bottom-color: rgba(0, 0, 0, 0.125);
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-left-color: rgba(0, 0, 0, 0.125);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-radius: .25rem;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+    }
+    .card-deck {
+        display: flex;
+        min-width: 220px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+    }
+    .card-header {
+        padding: 1.25rem 1.25rem;
+        margin-bottom: 0;
+        background-color: rgba(0,0,0,.03);
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+    .card-title {
+        margin-bottom: .75rem;
+    }
+    .box-shadow {
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    }
+    small {
+        color: #999999;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: smaller;
+        display: inline-block;
+    }
+    /* ul {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    } */
+    .list-unstyled {
+        padding-left: 0;
+        list-style: none;
+    }
+    .col-lg-5 {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .list-inline {
+        padding-left: 0;
+        list-style: none;
+    }
+    .list-inline-item:not(:last-child) {
+        margin-right: .5rem;
+    }
+    .mb-auto, .my-auto {
+        margin-bottom: auto!important;
+        margin-top: auto!important
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+
+    footer.footer {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .bg-dark {
+        background-color: #143055!important;
+    }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .text-muted {
+    color: lightblue!important;
+    }
+    .mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+    }
+    .small, small {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .table {
+        width: 90%;
+        position: relative;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+    #packageRequired, #dataRequired, #login, #home, #newEvent, #searchEvent
+    #calendar, #roomSelect, #price, #modelMaintenance, #dataUpdate {
+        font-weight: 100;
+    }
+    .panel-heading .accordion-toggle:after {
+        font-family: 'Glyphicons Halflings'; 
+        content: "\e114";
+        float: right;
+        color: #143055;
+    }
+    .panel-heading .accordion-toggle.collapsed:after {
+        content: "\e080";
+    }
+
+    a:link:active, a:visited:active {
+        color: gray;
+    }
+
+    li {
+        margin: 10px;
+    }
+    .callout-block.callout-block-info {
+        border-color: #5b99ea;
+        background: #f9fbfe;
+    }
+    .callout-block {
+        padding: 1.5rem;
+        border-left: 3px solid #5d6778;
+        background: #f5f5f5;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .callout-block.callout-block-info .callout-title {
+        color: #1c6fdc;
+    }
+    .callout-block {
+        position: relative;
+        font-size: 15px;
+        margin-left: 20px;
+        margin-right: 100px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .callout-title {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .mr-1, .mx-1 {
+        margin-right: .25rem !important;
+    }
+    .counter-container ol li{
+        counter-increment: my-awesome-counter;
+        display: inline-block;
+    }
+    .counter-container ol li::before{
+        position: absolute;
+        left: 0px;
+        right:20px;
+        margin-top: -10px;
+        content: counter(my-awesome-counter);
+        /* display: inline-block; */
+        font-weight: bold;
+        text-align: center;
+        margin-left: 30px;
+        margin-bottom: 5px;
+        line-height: 35px;
+        transition: all .2s;
+        color: #ffffff;
+        background-image: initial;
+        background-position-x: initial;
+        background-position-y: initial;
+        background-size: initial;
+        /* background-repeat-x: initial;
+        background-repeat-y: initial; */
+        background-attachment: initial;
+        background-origin: initial;
+        background-clip: initial;
+        background-color: #143055;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border-block-start-style: groove;
+        border-left-style: groove;
+        border-block-end-style: groove;
+        border-right-style: groove;
+    }
+    #backToTop {
+        margin-left: 10px;
+        font-size: 10px;
+        margin-bottom: -20px;
+        margin-top: -10px;
+        color: #143055;
+    }
+    #backToTop:hover {
+        font-size: 12px;
+        color:#5d6778;
+    }
+    hr {
+        margin: 10px
+    }
+
+    
+    .featureCol {
+        -webkit-column-count: 3; /* Old Chrome, Safari and Opera */
+        /* -moz-column-count: 3; Old Firefox */
+        column-count: 3;
+    }
+    .featureCol2 {
+        -webkit-column-count: 2; /* Old Chrome, Safari and Opera */
+        /* -moz-column-count: 3; Old Firefox */
+        column-count: 2;
+    }
+    ul {
+        display: block;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .table {
+        width: 90%;
+        position: relative;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+    .topButtons{
+        position: relative;
+        margin-top: -10px;
+        margin-bottom: -5px;
+        margin-left: -10px;
+        margin-right: -10px;
+        height: 50px;
+    }
+
+/*LOGOUT POPUP*/
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+}
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: HelveticaNeue-Light;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+.trigger_popup_fricc {
+    position: relative;
+        margin-top: -10px;
+        margin-bottom: -5px;
+        margin-left: -10px;
+        margin-right: -10px;
+        height: 50px;
+    cursor: pointer;
+
+}
+/* Popup box END */
+
+/*Contact Dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top:50px;
+  right:110px;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: HelveticaNeue-Light;
+  color: #143055;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+
+</style>
+
+<script type="text/javascript">
+$(window).load(function () {
+    $(".trigger_popup_fricc").click(function(){
+       $('.hover_bkgr_fricc').show();
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+    $('.popupCloseButton').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+        $('#closePopup').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+});
+
+
+//  When the user clicks on Contact, 
+// toggle between hiding and showing the dropdown content 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropdown')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+</script>
+</head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="color: lightskyblue" 
+            href="http://127.0.0.1:5000/"><i class="fa fa-fw fa-html5"></i> GWCCA
+                <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a class="topButtons" style="color: white" href="http://127.0.0.1:5000/home-page"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                <li><a class="topButtons" style="color: white" href="http://127.0.0.1:5000/main-page"><i class="fa fa-fw fa-info"></i> Event Information</a></li>
+                <li><a class="topButtons" style="color: white" href="http://127.0.0.1:5000/calendar-page"><i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                <li><a class="topButtons" style="color: white" href="http://127.0.0.1:5000/search-page"><i class="fa fa-fw fa-search"></i> Search Events</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a  class="topButtons" href="http://127.0.0.1:5000/help-page" style="color: white"><i class="fa fa-fw fa-question"></i> Help</a></li>
+                <li><a class="topButtons" href=javascript:myFunction() style="color: white"   class="dropdown"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="mailto:communications@GWCC.com?Subject=Web%20App" target="_top">Email</a>
+                </div>
+            <li><a style="color: white" class="trigger_popup_fricc" class="topButtons"><i class="fa fa-fw fa-user"></i> Logout</a></li>
+            </ul>
+            <!-- POPUP -->
+                    <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div style="width: 350px;">
+                <p1 style="font-size: 15px; font-family: Helvetica;">Are you sure you want to logout?</p1>
+                <br>
+                <br>
+                <button onclick="location.href='/'" class="btn btn-primary" style="font-family: Helvetica;">Yes</button> <span> &ensp;</span>
+                <button class="btn btn-primary" id="closePopup" style="font-family: Helvetica;">No</button>
+            </div>
+        </div>
+        </li>
+        </div>
+    </div>
+</nav>
+<body>
+<br>
+<div class="container">
+    <div class="row" style="margin-left: -20px;margin-right: -20px;">
+        <div class="col-lg-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <i class="fa fa-fw fa-cogs"></i> Initial Setup Requirement
+                        </a>
+                    </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <li class="list-unstyled"><a href="#packageRequired" style="font-style: italic; color: #143055">
+                            <i class="fa fa-cubes"></i> Package Requirement</a></li>
+                        <li class="list-unstyled"><a href="#dataRequired" style="font-style: italic; color: #143055">
+                            <i class="fa fa-fw fa-database"></i> Data Requirement</a></li>
+                    </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        <i class="fa fa-fw fa-book"></i> Web App User Manual
+                        </a>
+                    </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                            <li class="list-unstyled"><a href="#login" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-user"></i> Login</a></li>
+                            <li class="list-unstyled"><a href="#home" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-home"></i> Home</a></li>
+                            <li class="list-unstyled"><a href="#newEvent" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-plus"></i> New Event</a></li>
+                            <li class="list-unstyled"><a href="#roomSelect" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-check"></i> Room Selection</a></li>
+                            <li class="list-unstyled"><a href="#price" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-dollar"></i> Pricing</a></li>
+                            <li class="list-unstyled"><a href="#searchEvent" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-search"></i> Search Event</a></li>
+                            <li class="list-unstyled"><a href="#calendar" style="font-style: italic; color: #143055">
+                                <i class="fa fa-fw fa-calendar"></i> Calendar</a></li>
+                    </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        <i class="fa fa-fw fa-wrench"></i> Back-end Maintenance
+                        </a>
+                    </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <!-- <li class="list-unstyled"><a href="#modelMaintenance" style="font-style: italic; color: #143055">
+                            <i class="fa fa-fw fa-briefcase"></i> Model Maintenance</a></li> -->
+                        <li class="list-unstyled"><a href="#dataUpdate" style="font-style: italic; color: #143055">
+                            <i class="fa fa-fw fa-refresh"></i> Data Update</a></li>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <li class="list-unstyled">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" 
+                                aria-expanded="false" aria-controls="collapseOne" style="color: #143055">
+                                    <h5 class="text-left-title">Initial Setup Requirement</h5>
+                                </button>
+                            </li>
+                            <div id="collapseOne" class="collapse" style="color: #143055">
+                                <li class="list-unstyled text-left"><a href="#packageRequired">Package Requirement</a></li>
+                                <li class="list-unstyled text-left"><a href="#dataRequired">Data Requirement</a></li>
+                            </div>
+                            <li class="list-unstyled">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" 
+                                aria-expanded="false" aria-controls="collapseTwo" style="color: #143055">
+                                    <h5 class="text-left-title">Web App User Manual</h5>
+                                </button>
+                            </li>
+                            <div id="collapseTwo" class="collapse" style="color: #143055">
+                                <li class="list-unstyled text-left"><a href="#login">Login</a></li>
+                                <li class="list-unstyled text-left"><a href="#home">Home</a></li>
+                                <li class="list-unstyled text-left"><a href="#newEvent">New Event</a></li>
+                                <li class="list-unstyled text-left"><a href="#searchEvent">Search Event</a></li>
+                                <li class="list-unstyled text-left"><a href="#calendar">Calendar</a></li>
+                                <li class="list-unstyled text-left"><a href="#roomSelect">Room Selection</a></li>
+                                <li class="list-unstyled text-left"><a href="#price">Pricing</a></li>
+                            </div>
+                            <li class="list-unstyled">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" 
+                                    aria-expanded="false" aria-controls="collapseThree" style="color: #143055">
+                                        <h5 class="text-left-title">Back-end Maintenance</h5>
+                                    </button>
+                                </li>
+                                <div id="collapseThree" class="collapse" style="color: #143055">
+                                    <li class="list-unstyled text-left"><a href="#packageRequired">Model Maintenance</a></li>
+                                    <li class="list-unstyled text-left"><a href="#dataRequired">Data Update</a></li>
+                                </div> -->
+            <!-- </div> 
+            </div>
+        </div> -->
+        </div>
+        <div class="col-lg-9">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h2 class="text-center" style="font-weight: bold;">
+                        <i class="fa fa-fw fa-cogs"></i>
+                        Initial Setup Requirement
+                    </h2>
+                    <h3 id="packageRequired" style="font-weight: bold;"><i class="fa fa-fw fa-cubes"></i> Package Requirement</h3>
+                    <p> This help section is broken into <em>2</em> sub-categories. The first section details the tools 
+                        the developers used for all models and general visualizations. The second section detailes the tools used for the optimization and 
+                        cost prediction models specifically. 
+                    </p>
+                    <div class="callout-block callout-block-info">
+                        <div class="content">
+                            <h4 class="callout-title">
+                                <i class="fa fa-info-circle"></i> Note
+                            </h4>
+                            <p>For both optimization and cost prediction models, we only used <em>Python</em> as our programming language.
+                               Thus, the packages provided are only for the use in python. For general requirement, <em>Python, CSS, HTML,
+                               Javascript, SQL</em> are used. Only package installations are needed for Python and web-app building.</p>
+                        </div>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Genral Requirement</Strong>
+                                <p style="margin: 15px;"><em>1.</em> Python 3.6/3.7
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Package</th>
+                                                <th scope="col">Install Command Line</th>
+                                                <th scope="col">Usage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/pandas/">pandas</td>
+                                                <td><code>&lt;pip install pandas&gt;</code></td>
+                                                <td>Build up dataframe</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/numpy/">numpy</td>
+                                                <td><code>&lt;pip install numpy&gt;</code></td>
+                                                <td>Matrix and array calculation, data process</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://matplotlib.org">matplotlib</td>
+                                                <td><code>&lt;pip install matplotlib&gt;</code></td>
+                                                <td>Visualization tool</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/scipy/">scipy</td>
+                                                <td><code>&lt;pip install scipy&gt;</code></td>
+                                                <td>Statistics and Optimization framework</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://docs.python.org/3/library/datetime.html">datetime</td>
+                                                <td><code>&lt;pip install datetime&gt;</code></td>
+                                                <td>Construct Datetime object</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </p>
+                                <p style="margin: 15px;"><em>2.</em> Web-app
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Package</th>
+                                                <th scope="col">Install Command Line</th>
+                                                <th scope="col">Usage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/Flask/">flask</td>
+                                                <td><code>&lt;pip install flask&gt;</code></td>
+                                                <td>Build web-app framework</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </p>
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Models</Strong>
+                                <p style="margin: 15px;">
+                                    <table class="table table-striped" style="margin-left: 0px;">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Package</th>
+                                                <th scope="col">Install Command Line</th>
+                                                <th scope="col">Usage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="https://seaborn.pydata.org">seaborn</td>
+                                                <td><code>&lt;pip install seaborn&gt;</code></td>
+                                                <td>Advanced Visualization Tool</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://plot.ly/python/getting-started/">plotly</td>
+                                                <td><code>&lt;pip install plotly&gt;</code></td>
+                                                <td>Interactive Visualization Tool</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/sklearn/">sklearn</td>
+                                                <td><code>&lt;pip install sklearn&gt;</code></td>
+                                                <td>Build/select models, metrics measurements and other machine learning tools
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://www.statsmodels.org/stable/index.html">statsmodels</td>
+                                                <td><code>&lt;pip install -U statsmodels&gt;</code></td>
+                                                <td>Distribition model analysis and visualizations</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://docs.python.org/3/library/math.html">math</td>
+                                                <td>Automatically downloaded with Python</td>
+                                                <td>Basic calculations</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://lightgbm.readthedocs.io/en/latest/Python-Intro.html">lightgbm</td>
+                                                <td><code>&lt;pip install setuptools wheel numpy scipy scikit-learn -U&gt;</code></td>
+                                                <td>Machine Learning tool can be used for regression/prediction</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://pypi.org/project/researchpy/">researchpy</td>
+                                                <td><code>&lt;pip install researchpy&gt;</code></td>
+                                                <td>Cramer's V correlation calculation for feature selection</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="https://xgboost-clone.readthedocs.io/en/latest/python/python_api.html">xgboost</td>
+                                                <td><code>&lt;pip install xgboost&gt;</code></td>
+                                                <td>Gradient Boosting regression model</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>   
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="dataRequired" style="font-weight: bold;"><i class="fa fa-fw fa-database"></i> Data Requirement</h3>
+                    <p> This section describes all necessary <em>.csv or .excel</em> files needed ensure the back-end models can run.
+                        The room recommendation optimization model requires 2 csv files. The cost prediction regression model requires 
+                        1 csv file. The structure each file and the self-defined columns will be explained in this section. 
+                        <!-- For updating the data
+                        and model, more help can be find in Back-end Maintenance, <a href="#dataUpdate">Data Update</a>
+                        and <a href="#modelMaintenance">Model Maintenance</a>. -->
+                    </p>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Optimization Model</Strong>
+                                <p style="margin-top: 15px; margin-left: -10px;">
+                                <ul><h4><em style="font-weight: bold">1. Room Data.csv</em></h4>
+                                    Sample:
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">RoomID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">SQFT</th>
+                                                <th scope="col">Cost</th>
+                                                <th scope="col">Building</th>
+                                                <th scope="col">Floor</th>
+                                                <th scope="col">X</th>
+                                                <th scope="col">Y</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>0</td>
+                                                <td>Exhibit Hall A1</td>
+                                                <td>149,000</td>
+                                                <td>2,859</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Exhibit Hall A2</td>
+                                                <td>86,000</td>
+                                                <td>2,204.77</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <em style="font-weight: bold">RoomID</em>: Unique to each room. <br>
+                                    <em style="font-weight: bold">Building</em>: 0 represents Building A, 
+                                        200 represents Building B, and 260 represents Building C. 
+                                        Those are parameters representing the weights. <br>
+                                    <em style="font-weight: bold">Floor</em>: First Floor is 0, Second Floor is 30, 
+                                        Third Floor is 60, Fourth Floor is 90, Fifth Floor is 120.
+                                        Those are parameters representing the weights. <br>
+                                    <em style="font-weight: bold">X & Y</em>: Represent the horizontal and vertical 
+                                        location of each room on each floor.
+                                </ul><br>
+                                    <ul><h4><em style="font-weight: bold">2. Occupied Rooms Data.csv</em></h4>
+                                            Sample:
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">RoomID</th>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">DateIn</th>
+                                                    <th scope="col">DateOut</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Exhibit Hall A2</td>
+                                                    <td>2014/12/31</td>
+                                                    <td>2015/1/4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>41</td>
+                                                    <td>Exhibit Hall B2</td>
+                                                    <td>2014/12/31</td>
+                                                    <td>2015/1/4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="margin: 15px;">
+                                            <div class="callout-block callout-block-info">
+                                                <div class="content">
+                                                    <h4 class="callout-title">
+                                                        <i class="fa fa-info-circle"></i> Note
+                                                    </h4>
+                                                    <p>This above chart is the overall occupancy status for all the rooms in historical dataset. 
+                                                        If one event used multiple rooms, all rooms should be recorded seperately. 
+                                                        The mapping of RoomID to Room Name is documented in the <em>Room Data.csv</em> file.</p>
+                                                </div>
+                                            </div>    
+                                        </p>
+                                    </ul>
+                                </p> 
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Cost Prediction Model</Strong>
+                                <ul><h4><em style="font-weight: bold">Event Data Cleaned.csv</em></h4>
+                                    Sample:
+                                <p style="margin-top: 15px;">
+                                        <table class="table table-striped" style="font-size: 0.7em">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Event ID</th>
+                                                    <th scope="col">SQFT</th>
+                                                    <th scope="col">Ordered Rent Total</th>
+                                                    <th scope="col">Min F&B</th>
+                                                    <th scope="col">Attendance</th>
+                                                    <th scope="col">Total Room Nights</th>
+                                                    <th scope="col">Event Length</th>
+                                                    <th scope="col">Contact Till Start</th>
+                                                    <th scope="col">E-A</th>
+                                                    <th scope="col">E-B</th>
+                                                    <th scope="col">E-C</th>
+                                                    <th scope="col">M-A</th>
+                                                    <th scope="col">M-B</th>
+                                                    <th scope="col">M-C</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>6179</td>
+                                                    <td>1,284,565</td>
+                                                    <td>67,500</td>
+                                                    <td>0</td>
+                                                    <td>19,000</td>
+                                                    <td>10,717</td>
+                                                    <td>3</td>
+                                                    <td>574</td>
+                                                    <td>1</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>6</td>
+                                                    <td>11</td>
+                                                    <td>0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5058</td>
+                                                    <td>4,764,175</td>
+                                                    <td>139,825</td>
+                                                    <td>100,000</td>
+                                                    <td>7,114</td>
+                                                    <td>9,732</td>
+                                                    <td>5</td>
+                                                    <td>734</td>
+                                                    <td>0</td>
+                                                    <td>1</td>
+                                                    <td>0</td>
+                                                    <td>1</td>
+                                                    <td>51</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <em style="font-weight: bold">Attendance</em>: The attendance input feature 
+                                        is not the same figure as the actual attendance, for this information will not be available
+                                        until the event is over. Thus, we used the Expected Attendance provided in RFP as the input for the
+                                        attendance feature. In historical data, if an event did not have Expected Attendance 
+                                        information, the actual attendance was used instead to keep as many training data as 
+                                        possible.<br>
+                                        <em style="font-weight: bold">Contact Till Start</em>: This feature is created by 
+                                        the developers by taking the difference between the start date of the event and the 
+                                        submission date of the RFP. <br>
+                                        <em style="font-weight: bold">E-A, E-B, E-C</em>: "E" represents Exhibit Halls, and "A"
+                                        represents Building A. All tags represents the number of Exhibit Halls used/chosen in 
+                                        the given event.<br>
+                                        <em style="font-weight: bold">M-A, M-B, M-C</em>: "M" represents Meeting Rooms, and "A"
+                                        represents Building A. All tags represents the number of Meeting Rooms used/chosen in 
+                                        the given event.
+                                        <p style="margin: 15px;">
+                                            <div class="callout-block callout-block-info">
+                                                <div class="content">
+                                                    <h4 class="callout-title">
+                                                        <i class="fa fa-info-circle"></i> Note
+                                                    </h4>
+                                                    <p> <em>1.</em> We recommend to make Expected Attendance a required information in the 
+                                                        future events' RFP so a more accurate estimation can be obtained. </p>
+                                                    <p> <em>2.</em> The room information in our model is given by the outputs of optimization
+                                                        model as described in the last section.</p>
+                                                </div>
+                                            </div>    
+                                        </p>
+                                    </ul>
+                                </p>
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Classification Model</Strong>
+                                <p style="margin: 15px;">No initial data required, for all clusters and profit margins were already fixed and 
+                                    calculated in the back-end. However, the model can be updated if a more rigorous demand forecasting tool is 
+                                    avaiable. The basic logic behind the model is to assign reasonable and profitable profit margins to each 
+                                    event based on type and months. For different clusters, the demand peak, trough and average seasons are 
+                                    also differentiated, so the demand are analyzed within one cluster and suggested profit margins vary based
+                                    on the cluster and demand.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>   
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h2 class="text-center" style="font-weight: bold;">
+                        <i class="fa fa-fw fa-book"></i>
+                            Web App User Manual
+                    </h2>
+                    <h3 id="login" style="font-weight: bold;"><i class="fa fa-fw fa-user"></i> Log-in</h3>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Inputs Requirement</Strong>
+                                <p style="margin: 15px;"><code>&lt;EmployeeID&gt;</code> and <code>&lt;Password&gt;</code>; you can choose to view
+                                or hide your password input. The inputs are case sensitive.</p>
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Add New Users</Strong>
+                                <p style="margin: 15px;">The only current user in the initial system is the one with username 
+                                    <code>&lt;Mark&gt;</code> and password <code>&lt;apple&gt;</code>. 
+                                    In order to add or remove employee IDs, the database <em>5GWCC.db</em> needs to be updated.
+                                    Follow this procedure in order to add an employee:
+                                    <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Command Line</em>.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>2.</em> Open the folder in which the web app is stored. 
+                                    For example, if the web app is in the folder <em>Documents/Georgia Tech Senior Design</em>,
+                                    the command should be:
+                                    <code>$cd Documents/Georgia Tech Senior Design</code></p></ul>
+                                    <ul style="margin: 2px;"><p><em>3.</em> Then type <code>$sqlite3 5GWCC.db</code> and press enter, at which time
+                                        the database is loaded.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>4.</em> To view all employee IDs and passwords, 
+                                        type <code>SELECT * FROM user;</code> and press enter.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>5.</em> To add an employee ID, type <code>INSERT INTO user (employeeID, empPassword) values 
+                                        (“NEW EMPLOYEE ID”, “NEW EMPLOYEE PASSWORD”);</code> and press enter.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>6.</em> To ensure it was properly added, view the list by typing 
+                                        <code>SELECT * FROM users;</code> and press enter. </p></ul>
+                                    <ul style="margin: 2px;"><p><em>7.</em> In order to remove an employee, type 
+                                        <code>DELETE FROM user WHERE employeeID = “DELETED EMPLOYEE ID”</code> and press enter.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>8.</em> To ensure it was properly removed, view the list by typing
+                                        <code>SELECT * FROM users;</code> and press enter.</p></ul>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="home" style="font-weight:bold;"><i class="fa fa-home"></i> Home Page</h3>
+                    <p style="margin:15px;">After logging in, the web-app will redirect to the home page. From the home page, 
+                        there are three options: to insert a new event into the model in order to output cost, room selections, 
+                        and profit margin; to look up a previous event; or to view a calendar. 
+                        Please select the appropriate option and the page will redirect. 
+                        At anytime, you also have the option to log out of the system by clicking "Logout" in the navigation bar. 
+                        The logic of the navigation is given in the flowchart shown below
+                        <figure class="figure">
+                            <img src="/static/flowChartHome.png" class="img-responsive" 
+                                height="330" width="820">
+                            <figcaption class="figure-caption text-center" style="font-weight: bold">Fig.1 Home Page Logic Flowchart</figcaption>
+                        </figure>
+                    </p>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="newEvent" style="font-weight:bold;"><i class="fa fa-fw fa-plus"></i> New Event</h3>
+                    <div class="counter-container">
+                        <ol>
+                        <li><Strong style="margin-left: 15px;">Required Inputs</Strong>
+                            <p style="margin-top:20px;"> 
+                                <div class="row">
+                                    <ul class="list-group featureCol text-center ">
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Event Name
+                                            </ul>
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Event Type
+                                            </ul>  
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Event Start Date
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Event End Date
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Exp Attendance
+                                            </ul>     
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                    SQFT Requested
+                                            </ul>
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                    Total Room Nights
+                                            </ul>  
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                    RFP Enter Date
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Order Rent Total
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Min F&B Revenue
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                  Number of Exhibit Halls
+                                            </ul>
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                   Number of Meeting Rooms
+                                            </ul>  
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                    Number of Auditoriums
+                                            </ul>
+                                            <ul class="list-group-item text-center">
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                    Number of Ballrooms
+                                            </ul>
+                                            <ul class="list-group-item text-center"> 
+                                                <span class="badge pull-left" 
+                                                style="background-color: rgba(123, 126, 124, 0.87)">Opt</span>
+                                                    Min SQFT of all rooms
+                                            </ul> 
+                                        </ul>
+                                </div>
+                            </p>
+                        </li>
+                        <li><Strong style="margin-left: 15px;">Navigate to Room Allocation Page</Strong>
+                            <p style="margin: 15px;">If all of the input information is available, pass it into the Event Information form. 
+                                Press <code>submit</code> when finished.</p>
+                            <p style="margin: 15px;">If a <em>feasible</em> solution is produced, the web app will redirect to the room allocation solution. 
+                            If there is an <em>infeasible</em> solution, a message line will appear with the option to return to the input page.</p> 
+                        </li>
+                        </ol>
+                    </div>   
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="roomSelect" style="font-weight:bold;"><i class="fa fa-fw fa-check"></i> Room Selection</h3>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">View Results</Strong>
+                                <p style="margin: 15px;">In order to see which rooms are recommended for an event, 
+                                    hover over the picture for the building. The rooms chosen by the optimization model
+                                    are presented in the table. Only rooms that are unbooked at the time when inputs are 
+                                    entered will be recommended. </p>
+                                <!-- <p style="margin: 15px;">Details for updating the occupied rooms are in <a href="#dataUpdate">Back-end Maintenance -> Data Update</a></p> -->
+                                
+                            </li>
+                                <li><Strong style="margin-left: 15px;">Add Rooms</Strong>
+                                    <p style="margin: 15px;">To add a room to the existing output table, 
+                                        select a room from the drop down list and then <em>click</em> the plus symbol as shown
+                                        <i class="fa fa-plus-circle" style="margin-left: -50px;"></i></p>
+                                        <div class="callout-block callout-block-info">
+                                            <div class="content">
+                                                <h4 class="callout-title">
+                                                    <i class="fa fa-info-circle"></i> Note
+                                                </h4>
+                                                <p>The drop down list includes all the rooms in that building. This will allow any room to be 
+                                                    selected regardless of if the room is already booked for another event. </p>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li><Strong style="margin-left: 15px;">Remove Rooms</Strong>
+                                    <p style="margin: 15px;">To remove a room from the existing output table,
+                                        <em>click</em> on the red negative sign as shown 
+                                        <i class="fa fa-minus-circle" style="margin-left: -50px; margin-right:0px;"></i>
+                                        next to the room's name.</p>
+                                </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="price" style="font-weight:bold;"><i class="fa fa-fw fa-dollar"></i> Pricing</h3>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Cost Prediction Results</Strong>
+                                <p style="margin: 15px;">The entire model is already trained in back-end, so once we called 
+                                    the model by passing in all the features along with the chosen room results, the cost
+                                    prediction model is automatically running and the final outputs are shown in the <em>Pricing</em> 
+                                    page. A range of predicted cost is shown where the lower and upper bounds are given based on 
+                                    confidence interval.</p>
+                                    <div class="callout-block callout-block-info">
+                                        <div class="content">
+                                            <h4 class="callout-title">
+                                                <i class="fa fa-info-circle"></i> Note
+                                            </h4>
+                                            <p>As more and more event-based, accurate, and complete data gathered and updated in the 
+                                               database, the cost prediction is guaranteed to give more accurate results. 
+                                               <!-- The Details for updating the event-based expense information are in 
+                                               <a href="#dataUpdate">Back-end Maintenance -> Data Update</a></p> -->
+                                        </div>
+                                    </div>
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Dynamic Pricing Tool</Strong>
+                                <p style="margin: 15px;">On the right side of this section on the pricing page, there is an <em>interactive 
+                                    profit margin distribution chart</em>, which allows the users to move the expected or desired profit margin. 
+                                    The lowest profit margin is given as default, which is derived based on demand and type cluster. 
+                                    The user cannot drag the cursor to the left side of the default lower bound, for there is a high risk
+                                    of not making enough profits. 
+                                </p>
+                                <p style="margin: 15px;">On the left top of this section, as the user changes the expected/desired profit margin 
+                                    on the interactive distribution chart, the corresponding suggested <em>Basedline Price</em> changes
+                                    at the same time. On the left bottom of this section, there is a suggested profit margin which is calculated by
+                                    the classification model. Same type similar season events will be suggested the same profit margin.
+                                    <figure class="figure">
+                                        <img src="/static/priceDemoPage3.png" class="img-responsive" 
+                                            height="330" width="820">
+                                    <figcaption class="figure-caption text-center" style="font-weight: bold">Fig.2 Pricing Page Demo</figcaption>
+                                    </figure>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="searchEvent" style="font-weight:bold;"><i class="fa fa-fw fa-search"></i> Search Event</h3>
+                    <p style="margin:15px;">In order to search for an event, pass in the event ID or event name in the search bar and click 
+                        <code>search</code>. The event information will load. Except the original inputs user entered in the 
+                        <a href=#newEvent>New Event</a> page, the output also includes the cost prediction and baseline pricing results. </p>
+                    <div class="callout-block callout-block-info">
+                        <div class="content">
+                            <h4 class="callout-title">
+                                <i class="fa fa-info-circle"></i> Note
+                            </h4>
+                            <p> Only events that are previously entered into the web app will be saved in the system. So if the event is already 
+                                booked, and passed into the calendar, but has never been entered into this web app for room recommendation and cost 
+                                prediction, the event information will <em>NOT</em> be available on the search page.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h3 id="calendar" style="font-weight:bold;"><i class="fa fa-fw fa-calendar"></i> Calendar</h3>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">View Booked Events</Strong>
+                                <p style="margin: 15px;">
+                                    After clicking the <code>Calender</code> button on the navigation bar or directly navigate from the home page, 
+                                    the calendar page will be presented. The current records are the events that have already been booked, including both 
+                                    historical ones and some of the future ones which are guaranteed to happen.
+                                </p>
+                            </li>
+                            <li><Strong style="margin-left: 15px;">Add/Remove Events</Strong>
+                                <p style="margin: 15px;">
+                                    The calendar page has a <i class="fa fa-google" style="margin-left: -50px; margin-right: 0px;"></i><em>Google calendar</em> embedded. 
+                                    In order to add or remove events from the calendar, the user can do it <a href="https://calendar.google.com/calendar?cid=bGVyN3A2MGpmNmo2ZmRlNGlwMW9wOTE1bG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">here</a> and the results
+                                    are automatically synced to the Calendar page. For further help about the Google calendar, click <a href=
+                                    "https://support.google.com/calendar/?hl=en#topic=3417969">here</a>.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <h2 class="text-center" style="font-weight: bold;">
+                        <i class="fa fa-fw fa-wrench"></i>
+                            Back-end Maintenance
+                    </h2>
+                    <!-- <h3 id="modelMaintenance" style="font-weight: bold;"><i class="fa fa-fw fa-briefcase"></i> Model Maintenance</h3>
+                    <p> This section will be about how all 3 models can be maintained for functioning, and how the web-app can be 
+                        maintained as well. 
+                    </p>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Optimization Model</Strong>
+                                <p style="margin-top: 15px; margin-left: -10px;">
+                                <ul><h4><em style="font-weight: bold">1. Room Data.csv</em></h4>
+                                </ul>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                    <hr> -->
+                    <h3 id="dataUpdate" style="font-weight: bold;"><i class="fa fa-fw fa-refresh"></i> Data Update</h3>
+                    <p style="margin: 15px"> This section, we will introduce how can the data described in <a href="#dataRequired">
+                        Date Requirement</a> section can be updated. Thus, the model can be re-trained based on the most up-to-date 
+                        database, which will give as accurate prediction as possible. Once GWCCA owns more accurate cost per room data, 
+                        it also has the opportunity to replace the estimation for cost per room we obtained. 
+                    </p>
+                    <div class="counter-container">
+                        <ol>
+                            <li><Strong style="margin-left: 15px;">Optimization Model</Strong>
+                                <p style="margin-top: 15px; margin-left: -10px;">
+                                <ul><h4><em style="font-weight: bold">1. Room Data.csv</em></h4>
+                                </ul>
+                                </p>
+                                <em>Update in the <code>&lt;Room Data.csv&gt;</code></em>
+                                <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Room Data.csv</em></p></ul>
+                                <ul style="margin: 2px;"><p><em>2. Room ID</em> and <em>Name</em> are paired and should <em>NOT</em> be modified.</p></ul>
+                                <ul style="margin: 2px;"><p><em>3. SQFT</em> and <em>cost</em> can be updated as needed/new informations comes in.</p></ul>
+                                <ul style="margin: 2px;"><p><em>4.</em> Once all new numbers are entered, make sure to save the changes in the <em>.csv</em> file.</p></ul>
+                                <em>View/Update in the <code>&lt;Database&gt;</code></em>
+                                <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Command Line</em>.</p></ul>
+                                <ul style="margin: 2px;"><p><em>2.</em> Open the folder in which the web app is stored. 
+                                For example, if the web app is in the folder <em>Documents/Georgia Tech Senior Design</em>,
+                                the command should be:
+                                <code>$cd Documents/Georgia Tech Senior Design</code></p></ul>
+                                <ul style="margin: 2px;"><p><em>3.</em> Then type <code>$sqlite3 5GWCC.db</code> and press enter, at which time
+                                    the database is loaded.</p></ul>
+                                <ul style="margin: 2px;"><p><em>4.</em> To view the updates in <em>.csv</em> file, type <code>.read 5GWCC.sql</code> and press enter.</p></ul>
+                                <ul style="margin: 2px;"><p><em>5.</em> To view the updated room information, type <code>SELECT * FROM room;</code></p></ul>
+                                <p style="margin-top: 15px; margin-left: -10px;">
+                                <ul><h4><em style="font-weight: bold">2. Occupied Rooms Data.csv</em></h4>
+                                </ul>
+                                </p>
+                                <em>Update in the <code>&lt;Occupied Rooms Data.csv&gt;</code></em>
+                                <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Occupied Rooms Data.csv</em></p></ul>
+                                <ul style="margin: 2px;"><p><em>2.</em> The user can update booked rooms by entering the <em>RoomID,</em> 
+                                    corresponding <em>Room Name, DateIn,</em> and <em>DateOut</em>. The record should be obtained from newly booked
+                                    events.</p></ul>
+                                <ul style="margin: 2px;"><p><em>3.</em> Once all new numbers are entered, make sure to save the changes in the <em>.csv</em> file.</p></ul>
+                                <em>View/Update in the <code>&lt;Database&gt;</code></em>
+                                <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Command Line</em>.</p></ul>
+                                <ul style="margin: 2px;"><p><em>2.</em> Open the folder in which the web app is stored. 
+                                For example, if the web app is in the folder <em>Documents/Georgia Tech Senior Design</em>,
+                                the command should be:
+                                <code>$cd Documents/Georgia Tech Senior Design</code></p></ul>
+                                <ul style="margin: 2px;"><p><em>3.</em> Then type <code>$sqlite3 5GWCC.db</code> and press enter, at which time
+                                    the database is loaded.</p></ul>
+                                <ul style="margin: 2px;"><p><em>4.</em> To view the updated occupied rooms information, type <code>SELECT * FROM booked;</code></p></ul>
+                                <div class="callout-block callout-block-info">
+                                    <div class="content">
+                                        <h4 class="callout-title">
+                                            <i class="fa fa-info-circle"></i> Note
+                                        </h4>
+                                        <p style="margin:15px;"> It is possible that insert errors occur for past occupied rooms data 
+                                            because of duplicated event entries in <em>Underboeck</em>. Those errors do not affect the other 
+                                            entries in the table. Please ignore them and continue.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+                            <hr>
+                            <li><Strong style="margin-left: 15px;">Cost Prediction Model</Strong>
+                                <p style="margin-top: 15px; margin-left: -10px;">
+                                    <ul><h4><em style="font-weight: bold">Event Data Cleaned.csv</em></h4>
+                                    </ul>
+                                    <em>Update in the <code>&lt;Room Data.csv&gt;</code></em>
+                                    <ul style="margin: 2px;"><p><em>1.</em> Open the <em>Event Data Cleaned.csv</em></p></ul>
+                                    <ul style="margin: 2px;"><p><em>2.</em> Enter all the entries needed in the <em>.csv</em>.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>3.</em> Open the Python Jupyter Notebook file 
+                                        <code>&lt;Cost Prediction Model.ipynb&gt;</code>. </p></ul>
+                                    <ul style="margin: 2px;"><p><em>4.</em> Run the block of code under <code>Preprocessing Data</code> 
+                                        and <code>Gradient Boosting Hyperparameter Tuning</code>.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>5.</em> To make sure model is updated, run the following block of code,
+                                        and to see if the results are different from the previous version: 
+                                        <p><code>print("R^2 is " + "\t" + str(round(r2_score(y_test, y_pred), 4)))</code></p>
+                                        <p><code>print("MAE is " + "\t" + str(round(mean_absolute_error(y_test, y_pred), 2)))</code></p>    
+                                        <p><code>print("MSE is " + "\t" + str(round(mean_squared_error(y_test, y_pred), 2)))</code></p>
+                                    </p></ul>
+                                    <ul style="margin: 2px;"><p><em>6.</em> Copy the results from running <code>&lt;grid2.best_params_&gt;</code>,
+                                        which should output a dictionary.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>7.</em> Run the next block of code. 
+                                        In each of the 3 folds, record the iteration of the <em>best iteration</em>.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>8.</em> Take the average of these 3 values and round to nearest integer.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>9.</em> Append the rounded average in the above dictionary with a key of
+                                        <code>n_estimators</code>.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>10.</em> The dictionary will contain the following keys:
+                                        <div class="row" style="margin-left: 100px; margin-right: 100px;">
+                                            <ul class="list-group text-center featureCol2">
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          subsample
+                                                    </ul>
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          reg_lambda
+                                                    </ul>  
+                                                    <ul class="list-group-item text-center">
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          reg_alpha
+                                                    </ul>
+                                                    <ul class="list-group-item text-center">
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          objective
+                                                    </ul>
+                                                    <ul class="list-group-item text-center">
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          num_leaves
+                                                    </ul>     
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          min_child_weight
+                                                    </ul>
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          max_depth
+                                                    </ul>  
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          leaning_rate
+                                                    </ul> 
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          boosting
+                                                    </ul> 
+                                                    <ul class="list-group-item text-center"> 
+                                                        <span class="badge pull-left" 
+                                                        style="background-color: rgba(182, 28, 7, 0.87)">Req</span>
+                                                          n_estimators
+                                                    </ul> 
+                                                </ul>
+                                        </div>
+                                    </p></ul>
+                                    <em>Update in the <code>&lt;Back-end&gt;</code></em>
+                                    <ul style="margin: 2px;"><p><em>1.</em> Open the <em>5GWCC.py</em> in an editor.</p></ul>
+                                    <ul style="margin: 2px;"><p><em>2.</em> Ensure that in line <em>209</em>, the updated <em>.csv</em> is being used. 
+                                        Change the first parameter, <em>X_train.csv</em> to the name of the updated <em>.csv</em> file if necessary.
+                                    </p></ul>
+                                    <ul style="margin: 2px;"><p><em>3. </em>In line <em>212</em> under the <code>&lt;lgbParams&gt;</code> variable, 
+                                        replace the dictionary with the results from <code>&lt;grid2.best_params_ &gt;</code>and 
+                                        <code>&lt;n_estimators&gt;</code>.
+                                    </p></ul>
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="#top" id="backToTop"><i class="fa fa-fw fa-angle-up fa-xs"></i> Back to top</a>
+            </div>
+        </div>
+        </div> 
+    </div>
+</div>
+</body>
+<footer class="footer bg-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 h-100 text-center my-auto">
+                <ul class="list-inline mb-2">
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/about-the-gwcca/" style="color: white">About</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="https://www.gwcca.org/connect/" style="color: white">Contact</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Terms of Use</a>
+                </li>
+                <li class="list-inline-item" style="color: white">&sdot;</li>
+                <li class="list-inline-item">
+                    <a href="#" style="color: white">Privacy Policy</a>
+                </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Georgia Tech ISYE Team 5 2019. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                <li class="list-inline-item mr-3">
+                    <a href="https://www.facebook.com/GeorgiaWorldCongressCenterAuthority/" style="color: white">
+                    <i class="fa fa-facebook-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mr-3">
+                    <a href="https://twitter.com/GWCC_ATL" style="color: white">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/centennial_park/?hl=en" style="color: white">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+</footer>
+<style>
+body {
+    font-family: "HelveticaNeue-Light";
+    color:#143055;
+    background-color: #FFFFFF;
+}
+</style>
+</html>

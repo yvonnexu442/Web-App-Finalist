@@ -1,0 +1,9 @@
+#sentence{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    line-height: 1.25em/30px;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 300px;
+}

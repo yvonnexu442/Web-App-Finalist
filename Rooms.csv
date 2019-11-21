@@ -1,0 +1,145 @@
+﻿RoomID,Name,Sqft,Cost,Building,Floor,X,Y
+0,Exhibit Hall A1,149000,2859,0,0,1,1
+1,Exhibit Hall A2,86000,2204.77,0,0,2,1
+2,Exhibit Hall A3,105000,3025.11,0,0,3,1
+3,Exhibit Hall Meeting Room A101,7667,192.1,0,0,3,1
+4,Exhibit Hall Meeting Room A102,7667,192.1,0,0,3,2
+5,Exhibit Hall Meeting Room A103,7667,192.1,0,0,3,3
+6,Meeting Room A301,2863,82.16,0,60,1,2
+7,Meeting Room A302,4239,120.38,0,60,2,1
+8,Meeting Room A303,1331,40.18,0,60,3,1
+9,Meeting Room A304,1331,37.65,0,60,3,2
+10,Meeting Room A305,4272,125.68,0,60,2,2
+11,Meeting Room A306,534,12.38,0,60,1,3
+12,Meeting Room A307,1897,53.64,0,60,8,4
+13,Meeting Room A308a,454,12.5,0,60,9,4
+14,Meeting Room A308b,486,13.39,0,60,10,4
+15,Meeting Room A309,1897,52.73,0,60,13,4
+16,Meeting Room A310,950,28.11,0,60,13,2
+17,Meeting Room A311,2647,81.73,0,60,9,1
+18,Meeting Room A312,2625,80.26,0,60,8,1
+19,Meeting Room A313,2386,82.16,0,60,7,1
+20,Meeting Room A314,2561,88.19,0,60,6,1
+21,Meeting Room A315,1812,58.32,0,60,5,2
+22,Meeting Room A316,1816,58.45,0,60,5,1
+23,Building A Registration Hall,10162,285.24,0,90,3,6
+24,Building A-B Registration Hall,20324,639.17,0,90,3,6
+25,Executive Boardroom,2593,120.38,0,90,1,4
+26,Meeting Room A401,1220,65.38,0,90,4,4
+27,Meeting Room A402,1898,120.05,0,90,5,4
+28,Meeting Room A403,1901,82.54,0,90,6,4
+29,Meeting Room A404,4096,72.72,0,90,7,4
+30,Meeting Room A405,2048,67.79,0,90,8,4
+31,Meeting Room A406,1143,38.98,0,90,9,4
+32,Meeting Room A407,1411,53.3,0,90,10,4
+33,Meeting Room A408,1543,35.34,0,90,11,4
+34,Meeting Room A409,3331,101.23,0,90,12,4
+35,Meeting Room A410,3331,186.61,0,90,13,4
+36,Meeting Room A411,5834,444.47,0,90,6,1
+37,Meeting Room A412,5488,143.36,0,90,5,1
+38,Meeting Room A412A,1857,244.81,0,90,4,1
+39,Sidney Marcus Auditorium,15689,1012.08,0,90,1,1
+40,Exhibit Hall B1,89500,1636.41,200,0,1,1
+41,Exhibit Hall B2,96000,1692.66,200,0,2,1
+42,Exhibit Hall B3,121500,1830.15,200,0,3,1
+43,Exhibit Hall B4,149500,2641.65,200,0,4,1
+44,Exhibit Hall B5,151000,2494.04,200,0,5,1
+45,Exhibit Hall Meeting Room B101,6435,85.76,200,0,2,2
+46,Exhibit Hall Meeting Room B102,7513,100.13,200,0,2,3
+47,Exhibit Hall Meeting Room B103,6435,135.93,200,0,2,4
+48,Meeting Room B201,1857,34.01,200,30,2,1
+49,Meeting Room B202,2113,58.42,200,30,1,3
+50,Meeting Room B203,3645,33.8,200,30,2,3
+51,Meeting Room B204,2109,7.56,200,30,3,3
+52,Meeting Room B205,471,105.67,200,30,4,3
+53,Meeting Room B206,6638,43.89,200,30,5,3
+54,Meeting Room B207,2799,87.66,200,30,7,4
+55,Meeting Room B208,2803,24.57,200,30,8,4
+56,Meeting Room B209,1572,24.88,200,30,9,4
+57,Meeting Room B210,1564,46.69,200,30,11,4
+58,Meeting Room B211,2803,89.27,200,30,12,4
+59,Meeting Room B212,2803,43.08,200,30,13,4
+60,Meeting Room B213,2617,94.04,200,30,18,4
+61,Meeting Room B214,2616,37.9,200,30,19,4
+62,Meeting Room B215,2070,42.44,200,30,24,4
+63,Meeting Room B216,2607,83.13,200,30,25,4
+64,Meeting Room B217,2607,33.37,200,30,26,4
+65,Meeting Room B218,2075,33.96,200,30,27,4
+66,Meeting Room B301,2120,44.17,200,60,1,3
+67,Meeting Room B302,2773,98.41,200,60,1,5
+68,Meeting Room B303,3115,104.13,200,60,2,5
+69,Meeting Room B304,3115,51.96,200,60,3,5
+70,Meeting Room B305,2773,46.73,200,60,4,5
+71,Meeting Room B306,2120,36.75,200,60,4,3
+72,Meeting Room B307,471,7.52,200,60,5,3
+73,Meeting Room B308,3111,53.2,200,60,6,4
+74,Meeting Room B309,3105,51.88,200,60,7,4
+75,Meeting Room B310,2178,35.57,200,60,9,4
+76,Meeting Room B311,2178,37.45,200,60,10,4
+77,Meeting Room B312,3476,60.17,200,60,11,4
+78,Meeting Room B313,4002,193.55,200,60,12,4
+79,Meeting Room B313A,1994,40.44,200,60,11.5,4
+80,Meeting Room B313B,1996,76.07,200,60,12.5,4
+81,Meeting Room B314,3514,34.52,200,60,13,4
+82,Meeting Room B315,2178,93.61,200,60,14,4
+83,Meeting Room B316,2178,59.59,200,60,15,4
+84,Meeting Room B317,462,38.36,200,60,8,1
+85,Meeting Room B318,458,37.63,200,60,7,1
+86,Meeting Room B319,479,8.03,200,60,6,1
+87,Building B Registration Hall,10162,220.9,200,90,3,1
+88,International Conference Room,321,14.96,0,90,2,6
+89,Meeting Room B401,3111,19.69,200,90,4,6
+90,Meeting Room B402,3105,106.08,200,90,5,6
+91,Meeting Room B403,2182,157.05,200,90,6,6
+92,Meeting Room B404,2182,79.73,200,90,7,6
+93,Meeting Room B405,3476,57.3,200,90,7.5,6
+94,Meeting Room B406,4002,144.39,200,90,8,6
+95,Meeting Room B406A,1996,156.48,200,90,8.5,6
+96,Meeting Room B406B,1994,56.85,200,90,9,6
+97,Meeting Room B407,3514,48.84,200,90,9.5,6
+98,Meeting Room B408,2178,128.41,200,90,10,6
+99,Meeting Room B409,2178,82.75,200,90,11,6
+100,Meeting Room B411,460,51.9,200,90,4,4
+101,Authority Boardroom,1893,14333.93,200,90,3,10
+102,Thomas Murphy Ballroom 1,8260,293.31,200,120,1,1
+103,Thomas Murphy Ballroom 2,8568,288.25,200,120,2,1
+104,Thomas Murphy Ballroom 3,8586,284.43,200,120,3,1
+105,Thomas Murphy Ballroom 4,8260,295.94,200,120,4,1
+106,Exhibit Hall C1,103000,2193.21,260,0,2,1
+107,Exhibit Hall C2,106000,2483.27,260,0,3,1
+108,Exhibit Hall C3,105500,2206.18,260,0,4,1
+109,Exhibit Hall C4,91100,1923.31,260,0,5,1
+110,Exhibit Hall Meeting Room C111,5138,84.1,260,0,2,8
+111,Exhibit Hall Meeting Room C112,5833,92.82,260,0,2,6
+112,Exhibit Hall Meeting Room C113,4622,76.43,260,0,2,4
+113,Exhibit Hall Meeting Room C114,4138,68.63,260,0,2,2
+114,Meeting Room C103,1360,6.66,260,0,1,9
+115,Meeting Room C104,1164,29.07,260,0,1,8
+116,Meeting Room C105,1781,27.09,260,0,1,7
+117,Meeting Room C106,1779,83.15,260,0,1,6
+118,Meeting Room C107,2391,37.85,260,0,1,5
+119,Meeting Room C108,1779,58.8,260,0,1,4
+120,Meeting Room C109,1719,83.7,260,0,1,3
+121,Meeting Room C110,2328,38.71,260,0,1,2
+122,Room C101 Auditorium,5163,119.15,260,0,1,12
+123,Room C102 Auditorium,2420,45.27,260,0,2,11
+124,Meeting Room C201,2342,50.4,260,30,1,7
+125,Meeting Room C202,1610,124.52,260,30,1,6
+126,Meeting Room C203,2105,465.15,260,30,1,5
+127,Meeting Room C204,1610,247.87,260,30,1,4
+128,Meeting Room C205,2344,393.86,260,30,1,3
+129,Meeting Room C206,2614,112.86,260,30,1,1
+130,Meeting Room C207,1592,254.76,260,30,2,1
+131,Meeting Room C208,1430,157.87,260,30,3,1
+132,Meeting Room C209,1488,136.02,260,30,4,1
+133,Meeting Room C210,1430,78.65,260,30,5,1
+134,Meeting Room C211,1430,75.98,260,30,6,1
+135,Meeting Room C212,1488,51.94,260,30,7,1
+136,Meeting Room C213,1430,32.14,260,30,8,1
+137,Georgia Ballroom 1,7685,439.49,260,60,1,3
+138,Georgia Ballroom 2,10378,626.76,260,60,1,2
+139,Georgia Ballroom 3,7685,471.15,260,60,1,1
+140,Meeting Room C301,2288,181.93,260,60,2,5
+141,Meeting Room C302,3275,245.18,260,60,3,6
+142,Meeting Room A308,940,25.89,0,60,9.5,4
+143,Exhibit Hall BC,85300,1640,260,0,5,0
